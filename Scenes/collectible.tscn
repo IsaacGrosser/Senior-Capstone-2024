@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bin62ljx73ngp"]
+
+[ext_resource type="Script" path="res://Scripts/collectible.gd" id="1_febhj"]
+[ext_resource type="Texture2D" uid="uid://bat5pd4qqlwn1" path="res://Assets/Grass and Cave Tile Map.png" id="1_w82uq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm3pa"]
+atlas = ExtResource("1_w82uq")
+region = Rect2(176, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_deoap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm3pa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xp2vt"]
+radius = 6.0
+
+[node name="Collectible" type="Node2D"]
+position = Vector2(0, -8)
+script = ExtResource("1_febhj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_deoap")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xp2vt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
