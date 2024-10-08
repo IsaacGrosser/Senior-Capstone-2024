@@ -4,8 +4,8 @@ extends Area2D
 
 func _on_body_entered(body):
 	print("You have died!")
-	
-	# get_tree().get_first_node_in_group("Player")
+	# gets player collision body and removes it so character falls through the floor when dying
+	body.get_node("CollisionShape2D").queue_free()
 	
 	# Sets time to go at half speed! Must reset it!
 	Engine.time_scale = 0.5

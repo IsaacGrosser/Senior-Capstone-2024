@@ -13,6 +13,10 @@ const gravity_clamp : float = 400 # MAX GRAVITY
 # JUMP VARIABLE
 @export var jump_force : int = 275
 
+# WALL JUMP VARIABLES
+@export var walljump_force : int = 200
+@export var walljump_speed : int = 400
+
 # COYOTE VARIABLES 
 @export var coyote_buffer_length : int = 15
 var coyote_counter : int = 0 # variable to hold current count state
@@ -25,6 +29,13 @@ var jump_buffer_counter : int = 0 # variable to hold current count state
 # STATE CHECKS
 var falling_check : bool = false
 var floating_check : bool = false
+
+# CHARACTER NODE VARIABLES
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var collider = $CollisionShape2D
+@onready var ray_cast_left = $RayCastLeft
+@onready var ray_cast_right = $RayCastRight
+
 
 func _physics_process(delta):
 	# check if player is on the floor, play idle animation if true, 
@@ -96,6 +107,17 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("falling")
 		falling_check = true
 	
+	# WALL JUMP MECHANIC 
+	# checks to see if left raycast is colliding with a wall, if player jumps, and if they are not
+	# on the floor to prevent mega jumps, then sets jump force to variable and sets speed to opp
+	# direction of the wall to 'push' the character away from the wall
+	if ray_cast_left.is_colliding() and Input.is_action_just_pressed("jump") and not is_on_floor():
+		velocity.y = -walljump_force
+		velocity.x += walljump_speed
+	if ray_cast_right.is_colliding() and Input.is_action_just_pressed("jump") and not is_on_floor():
+		velocity.y = -walljump_force
+		velocity.x += -walljump_speed
+	
 	# check if y velocity is greater than zero & if jump button is being pressed
 	if velocity.y > 0 and Input.is_action_pressed("jump"):
 		# set velocity y to the float gravity
@@ -115,6 +137,10 @@ func _physics_process(delta):
 		if floating_check == true:
 			$AnimatedSprite2D.play("falling")
 			floating_check = false
+	
+
+	
+
 	
 	move_and_slide()
 

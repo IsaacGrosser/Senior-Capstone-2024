@@ -80,6 +80,7 @@ radius = 4.0
 height = 10.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 5
 collision_layer = 3
 script = ExtResource("1_lm4f6")
 
@@ -92,3 +93,11 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_yrog0")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -5)
+target_position = Vector2(-5, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -5)
+target_position = Vector2(5, 0)
