@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw3s5gb8cacru"]
+[gd_scene load_steps=17 format=3 uid="uid://bw3s5gb8cacru"]
 
 [ext_resource type="PackedScene" uid="uid://bg7r81lpwo3tm" path="res://Scenes/player.tscn" id="1_fk4dx"]
 [ext_resource type="Texture2D" uid="uid://caoqhyt8qy6ke" path="res://Assets/Simple tile map.png" id="2_tfn1d"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cncenb7gknrn8" path="res://Scenes/platform.tscn" id="5_w3ulr"]
 [ext_resource type="PackedScene" uid="uid://bu3m8s4amd8vv" path="res://Scenes/platform_cloud.tscn" id="6_aip78"]
 [ext_resource type="PackedScene" uid="uid://dhfbaqpv5nvp2" path="res://Scenes/enemy_gnome.tscn" id="8_b3qlf"]
+[ext_resource type="PackedScene" uid="uid://cxx00yc1f1c61" path="res://Scenes/fan.tscn" id="9_u8ixa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m0nt5"]
 texture = ExtResource("2_v1jc0")
@@ -399,6 +400,7 @@ position = Vector2(0, -3)
 
 [node name="Player" parent="." instance=ExtResource("1_fk4dx")]
 position = Vector2(32, -56)
+walljump_force = 225
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -8)
@@ -460,3 +462,6 @@ autoplay = "move"
 
 [node name="Enemy Gnome" parent="." instance=ExtResource("8_b3qlf")]
 position = Vector2(442, -16)
+
+[node name="Fan (wind blower ?)" parent="." instance=ExtResource("9_u8ixa")]
+position = Vector2(104, -8)

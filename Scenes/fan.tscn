@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxx00yc1f1c61"]
+
+[ext_resource type="Texture2D" uid="uid://caoqhyt8qy6ke" path="res://Assets/Simple tile map.png" id="1_828io"]
+[ext_resource type="Script" path="res://Scripts/fan.gd" id="1_tq541"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7i5b7"]
+size = Vector2(16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58hst"]
+radius = 8.0
+height = 112.0
+
+[node name="Fan (wind blower ?)" type="Node2D"]
+script = ExtResource("1_tq541")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_828io")
+region_enabled = true
+region_rect = Rect2(64, 48, 16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_7i5b7")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -107)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -51)
+shape = SubResource("CapsuleShape2D_58hst")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
