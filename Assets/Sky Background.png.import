@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6kwt3mu6udj6"
-path="res://.godot/imported/Grass and Cave Tile Map.png-b8d7c10906941d9e49241e66489f9003.ctex"
+uid="uid://cieqi2qiw6e70"
+path="res://.godot/imported/Sky Background.png-8a090debc994e3362cf42af26a3819cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Grass and Cave Tile Map.png"
-dest_files=["res://.godot/imported/Grass and Cave Tile Map.png-b8d7c10906941d9e49241e66489f9003.ctex"]
+source_file="res://Assets/Sky Background.png"
+dest_files=["res://.godot/imported/Sky Background.png-8a090debc994e3362cf42af26a3819cd.ctex"]
 
 [params]
 

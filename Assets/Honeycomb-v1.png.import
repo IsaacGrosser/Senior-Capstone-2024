@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6kwt3mu6udj6"
-path="res://.godot/imported/Grass and Cave Tile Map.png-b8d7c10906941d9e49241e66489f9003.ctex"
+uid="uid://bltei33p2wmux"
+path="res://.godot/imported/Honeycomb-v1.png-d50828d4f5a3f152d3dee700c995f54e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Grass and Cave Tile Map.png"
-dest_files=["res://.godot/imported/Grass and Cave Tile Map.png-b8d7c10906941d9e49241e66489f9003.ctex"]
+source_file="res://Assets/Honeycomb-v1.png"
+dest_files=["res://.godot/imported/Honeycomb-v1.png-d50828d4f5a3f152d3dee700c995f54e.ctex"]
 
 [params]
 

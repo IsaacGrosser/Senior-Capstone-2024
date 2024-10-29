@@ -83,8 +83,15 @@ height = 10.0
 z_index = 5
 collision_layer = 3
 script = ExtResource("1_lm4f6")
+jump_end_early_gravity_mod = 1
+max_speed = 105
+walljump_force = 230
+walljump_speed = 500
+wall_friction = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+z_index = 1
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_id4em")
 animation = &"idle"
@@ -101,3 +108,13 @@ target_position = Vector2(-5, 0)
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, -5)
 target_position = Vector2(5, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -8)
+zoom = Vector2(5, 5)
+limit_bottom = 172
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_vertical_offset = -0.6
+drag_top_margin = 0.45

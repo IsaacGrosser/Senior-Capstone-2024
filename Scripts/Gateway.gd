@@ -1,6 +1,8 @@
 extends Node2D
 
-signal collected
+@onready var area2d = $Area2D
+
+signal entered
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +15,7 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	print("You have collected this item!")
-	queue_free()
-	emit_signal("collected")
+	if body is CharacterBody2D:
+		Global.can_move = false
+		print("You have entered a gateway!")
+		emit_signal("entered")

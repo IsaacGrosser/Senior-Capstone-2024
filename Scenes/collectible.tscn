@@ -1,36 +1,74 @@
-[gd_scene load_steps=6 format=3 uid="uid://bin62ljx73ngp"]
+[gd_scene load_steps=11 format=3 uid="uid://bin62ljx73ngp"]
 
 [ext_resource type="Script" path="res://Scripts/collectible.gd" id="1_febhj"]
-[ext_resource type="Texture2D" uid="uid://bat5pd4qqlwn1" path="res://Assets/Grass and Cave Tile Map.png" id="1_w82uq"]
+[ext_resource type="Texture2D" uid="uid://bltei33p2wmux" path="res://Assets/Honeycomb-v1.png" id="2_0wgfw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bm3pa"]
-atlas = ExtResource("1_w82uq")
-region = Rect2(176, 48, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxh6w"]
+atlas = ExtResource("2_0wgfw")
+region = Rect2(16, 16, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipd7w"]
+atlas = ExtResource("2_0wgfw")
+region = Rect2(80, 16, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epovl"]
+atlas = ExtResource("2_0wgfw")
+region = Rect2(144, 16, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ehi"]
+atlas = ExtResource("2_0wgfw")
+region = Rect2(208, 16, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x41rw"]
+atlas = ExtResource("2_0wgfw")
+region = Rect2(272, 16, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb3kn"]
+atlas = ExtResource("2_0wgfw")
+region = Rect2(336, 16, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_deoap"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bm3pa")
+"texture": SubResource("AtlasTexture_wxh6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipd7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epovl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ehi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x41rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb3kn")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xp2vt"]
-radius = 6.0
+radius = 8.0
 
 [node name="Collectible" type="Node2D"]
-position = Vector2(0, -8)
+position = Vector2(0, -16)
 script = ExtResource("1_febhj")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_deoap")
+autoplay = "default"
+frame_progress = 0.0580518
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_xp2vt")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

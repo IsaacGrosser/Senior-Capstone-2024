@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6kwt3mu6udj6"
-path="res://.godot/imported/Grass and Cave Tile Map.png-b8d7c10906941d9e49241e66489f9003.ctex"
+uid="uid://djuu4m4ko6kw4"
+path="res://.godot/imported/wooden-gateway.png-06cdb361c8bf4874d08ac84a2ef54425.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Grass and Cave Tile Map.png"
-dest_files=["res://.godot/imported/Grass and Cave Tile Map.png-b8d7c10906941d9e49241e66489f9003.ctex"]
+source_file="res://Assets/wooden-gateway.png"
+dest_files=["res://.godot/imported/wooden-gateway.png-06cdb361c8bf4874d08ac84a2ef54425.ctex"]
 
 [params]
 
