@@ -112,9 +112,9 @@ target_position = Vector2(5, 0)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -8)
 zoom = Vector2(5, 5)
-limit_bottom = 172
+limit_left = -48
+limit_bottom = 64
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_vertical_offset = -0.6
 drag_top_margin = 0.45
