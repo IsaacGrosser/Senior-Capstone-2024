@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl0cls8hs4xx5"]
+[gd_scene load_steps=9 format=3 uid="uid://dl0cls8hs4xx5"]
 
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_d04rh"]
 [ext_resource type="Texture2D" uid="uid://b6kwt3mu6udj6" path="res://Assets/Grass and Cave Tile Map.png" id="1_rqu1g"]
 [ext_resource type="PackedScene" uid="uid://bg7r81lpwo3tm" path="res://Scenes/player.tscn" id="2_ajtik"]
 [ext_resource type="PackedScene" uid="uid://bin62ljx73ngp" path="res://Scenes/collectible.tscn" id="3_v1lgm"]
@@ -385,6 +386,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8ctmf")
 
 [node name="level_3" type="Node2D"]
+script = ExtResource("1_d04rh")
+level_name = "level_3"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6mtjt")
