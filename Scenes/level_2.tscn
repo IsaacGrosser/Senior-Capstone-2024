@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bg7r81lpwo3tm" path="res://Scenes/player.tscn" id="4_pcol4"]
 [ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="5_4xc6s"]
 [ext_resource type="PackedScene" uid="uid://c0p4a1jf42bke" path="res://Scenes/gatewayRight.tscn" id="6_881oj"]
-[ext_resource type="PackedScene" uid="uid://l3dyxojrddwo" path="res://Scenes/Backgrounds/ForestBackgroundGroundLevel.tscn" id="7_o7n8b"]
+[ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="7_lf7q2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1rpu7"]
 texture = ExtResource("1_orxct")
@@ -286,4 +286,4 @@ position = Vector2(191, 68)
 [node name="Gateway" parent="." instance=ExtResource("6_881oj")]
 position = Vector2(424, 0)
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("7_o7n8b")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("7_lf7q2")]

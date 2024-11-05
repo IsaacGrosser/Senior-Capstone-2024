@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6rixu30q0pu"]
+
+[ext_resource type="Texture2D" uid="uid://ditke762qoxyh" path="res://Assets/Background/Forest-background-3.0.png" id="1_clv7w"]
+[ext_resource type="Texture2D" uid="uid://oj2vifwvtymd" path="res://Assets/Background/background-284by216.png" id="2_3ol2y"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Background" type="ParallaxLayer" parent="."]
+modulate = Color(0.9, 0.756, 0.9, 1)
+motion_scale = Vector2(0.98, 1)
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(192, -324)
+texture = ExtResource("1_clv7w")
+region_enabled = true
+region_rect = Rect2(0, 648, 384, 648)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(576, -324)
+texture = ExtResource("1_clv7w")
+region_enabled = true
+region_rect = Rect2(0, 648, 384, 648)
+
+[node name="Back Grass" type="ParallaxLayer" parent="."]
+modulate = Color(0.9, 0.756, 0.9, 1)
+motion_scale = Vector2(0.77, 1)
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Back Grass"]
+position = Vector2(192, -108)
+texture = ExtResource("2_3ol2y")
+region_enabled = true
+region_rect = Rect2(0, 216, 384, 216)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Back Grass"]
+position = Vector2(576, -108)
+texture = ExtResource("2_3ol2y")
+region_enabled = true
+region_rect = Rect2(0, 216, 384, 216)
+
+[node name="Back Trees" type="ParallaxLayer" parent="."]
+modulate = Color(0.76, 0.608, 0.76, 1)
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Back Trees"]
+position = Vector2(192, -324)
+texture = ExtResource("1_clv7w")
+region_enabled = true
+region_rect = Rect2(0, 1944, 384, 648)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Back Trees"]
+position = Vector2(576, -324)
+texture = ExtResource("1_clv7w")
+region_enabled = true
+region_rect = Rect2(0, 1944, 384, 648)
+
+[node name="Middle Trees" type="ParallaxLayer" parent="."]
+modulate = Color(0.784314, 0.65098, 0.756863, 1)
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Middle Trees"]
+position = Vector2(192, -324)
+texture = ExtResource("1_clv7w")
+region_enabled = true
+region_rect = Rect2(0, 2592, 384, 648)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Middle Trees"]
+position = Vector2(576, -324)
+texture = ExtResource("1_clv7w")
+region_enabled = true
+region_rect = Rect2(0, 2592, 384, 648)
+
+[node name="Front Trees" type="ParallaxLayer" parent="."]
+modulate = Color(0.66, 0.594, 0.66, 1)
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Front Trees"]
+position = Vector2(192, -324)
+texture = ExtResource("1_clv7w")
+region_enabled = true
+region_rect = Rect2(0, 3240, 384, 648)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Front Trees"]
+position = Vector2(576, -324)
+texture = ExtResource("1_clv7w")
+region_enabled = true
+region_rect = Rect2(0, 3240, 384, 648)
+
+[node name="Front Grass" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Front Grass"]
+position = Vector2(192, -108)
+texture = ExtResource("2_3ol2y")
+region_enabled = true
+region_rect = Rect2(0, 1080, 384, 216)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Front Grass"]
+position = Vector2(576, -108)
+texture = ExtResource("2_3ol2y")
+region_enabled = true
+region_rect = Rect2(0, 1080, 384, 216)
+
+[node name="Bottom Grass Panel" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bottom Grass Panel"]
+modulate = Color(0, 0.498039, 0.486275, 1)
+position = Vector2(192, 108)
+texture = ExtResource("2_3ol2y")
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 216)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Bottom Grass Panel"]
+modulate = Color(0, 0.498039, 0.486275, 1)
+position = Vector2(576, 108)
+texture = ExtResource("2_3ol2y")
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 216)

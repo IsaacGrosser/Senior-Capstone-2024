@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl0cls8hs4xx5"]
+[gd_scene load_steps=10 format=3 uid="uid://dl0cls8hs4xx5"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_d04rh"]
 [ext_resource type="Texture2D" uid="uid://b6kwt3mu6udj6" path="res://Assets/Grass and Cave Tile Map.png" id="1_rqu1g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bin62ljx73ngp" path="res://Scenes/collectible.tscn" id="3_v1lgm"]
 [ext_resource type="PackedScene" uid="uid://cxx00yc1f1c61" path="res://Scenes/fan.tscn" id="4_4ougm"]
 [ext_resource type="PackedScene" uid="uid://c0p4a1jf42bke" path="res://Scenes/gatewayRight.tscn" id="5_chsuv"]
+[ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="7_w27wn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ctmf"]
 texture = ExtResource("1_rqu1g")
@@ -404,3 +405,5 @@ position = Vector2(-242, -136)
 
 [node name="Gateway" parent="." instance=ExtResource("5_chsuv")]
 position = Vector2(192, -16)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("7_w27wn")]
