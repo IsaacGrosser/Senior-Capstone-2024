@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cncenb7gknrn8" path="res://Scenes/platform.tscn" id="5_w3ulr"]
 [ext_resource type="PackedScene" uid="uid://bu3m8s4amd8vv" path="res://Scenes/platform_cloud.tscn" id="6_aip78"]
 [ext_resource type="PackedScene" uid="uid://dhfbaqpv5nvp2" path="res://Scenes/enemy_gnome.tscn" id="8_b3qlf"]
-[ext_resource type="PackedScene" uid="uid://cxx00yc1f1c61" path="res://Scenes/fan.tscn" id="9_u8ixa"]
+[ext_resource type="PackedScene" uid="uid://cxx00yc1f1c61" path="res://Scenes/bird.tscn" id="9_u8ixa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m0nt5"]
 texture = ExtResource("2_v1jc0")

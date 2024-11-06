@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmxgkiqhb0oov"
-path="res://.godot/imported/Gnome32-Animated (fall animation).png-4351cbf1ff1c006f2a876bf3a37ecbb1.ctex"
+uid="uid://4e4eis3k150o"
+path="res://.godot/imported/Gnome32-floating.png-605bd563cb257786d3605c211b7881c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gnome32-Animated (fall animation).png"
-dest_files=["res://.godot/imported/Gnome32-Animated (fall animation).png-4351cbf1ff1c006f2a876bf3a37ecbb1.ctex"]
+source_file="res://Assets/Gnomes/Gnome32-floating.png"
+dest_files=["res://.godot/imported/Gnome32-floating.png-605bd563cb257786d3605c211b7881c5.ctex"]
 
 [params]
 

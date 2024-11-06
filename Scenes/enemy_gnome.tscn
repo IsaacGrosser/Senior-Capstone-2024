@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dhfbaqpv5nvp2"]
 
-[ext_resource type="Texture2D" uid="uid://bl1wyr2ngnao4" path="res://Assets/Gnome32.png" id="1_12x4b"]
+[ext_resource type="Texture2D" uid="uid://bl1wyr2ngnao4" path="res://Assets/Gnomes/Gnome32.png" id="1_12x4b"]
 [ext_resource type="Script" path="res://Scripts/enemy_gnome.gd" id="1_eyluo"]
 [ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="2_ulcnd"]
 

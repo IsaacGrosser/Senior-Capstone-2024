@@ -7,8 +7,8 @@ const gravity_clamp : float = 300 # MAX GRAVITY
 @export var jump_end_early_gravity_mod : int = 10
 
 ## SPEED / MOVEMENT VARIABLES 
-@export var max_speed : int = 100
-@export var acceleration : int = 13
+@export var max_speed : int = 90
+@export var acceleration : int = 12
 
 ## JUMP VARIABLE
 @export var jump_force : int = 275

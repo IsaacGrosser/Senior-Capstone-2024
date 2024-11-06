@@ -1,44 +1,44 @@
 [gd_scene load_steps=12 format=3 uid="uid://bg7r81lpwo3tm"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_lm4f6"]
-[ext_resource type="Texture2D" uid="uid://cgn6n8bb8bd4u" path="res://Assets/Gnome16-animations.v2.png" id="2_wo8dv"]
+[ext_resource type="Texture2D" uid="uid://pq6umdk6cgtv" path="res://Assets/Gnomes/Gnome16-animations.v3.png" id="2_ejgyw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_83356"]
-atlas = ExtResource("2_wo8dv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sge0o"]
+atlas = ExtResource("2_ejgyw")
 region = Rect2(128, 10, 16, 22)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ibwon"]
-atlas = ExtResource("2_wo8dv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktn60"]
+atlas = ExtResource("2_ejgyw")
 region = Rect2(144, 10, 16, 22)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k2fa2"]
-atlas = ExtResource("2_wo8dv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvad5"]
+atlas = ExtResource("2_ejgyw")
 region = Rect2(176, 10, 16, 22)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_23se8"]
-atlas = ExtResource("2_wo8dv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd7qf"]
+atlas = ExtResource("2_ejgyw")
 region = Rect2(192, 10, 16, 22)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iv0jd"]
-atlas = ExtResource("2_wo8dv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdgin"]
+atlas = ExtResource("2_ejgyw")
 region = Rect2(16, 10, 16, 22)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_saais"]
-atlas = ExtResource("2_wo8dv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvgrs"]
+atlas = ExtResource("2_ejgyw")
 region = Rect2(32, 10, 16, 22)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_adwa4"]
-atlas = ExtResource("2_wo8dv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr6b7"]
+atlas = ExtResource("2_ejgyw")
 region = Rect2(80, 10, 16, 22)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_id4em"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_83356")
+"texture": SubResource("AtlasTexture_sge0o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ibwon")
+"texture": SubResource("AtlasTexture_ktn60")
 }],
 "loop": false,
 "name": &"falling",
@@ -46,10 +46,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k2fa2")
+"texture": SubResource("AtlasTexture_rvad5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_23se8")
+"texture": SubResource("AtlasTexture_fd7qf")
 }],
 "loop": false,
 "name": &"floating",
@@ -57,10 +57,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iv0jd")
+"texture": SubResource("AtlasTexture_hdgin")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_saais")
+"texture": SubResource("AtlasTexture_mvgrs")
 }],
 "loop": true,
 "name": &"idle",
@@ -68,7 +68,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_adwa4")
+"texture": SubResource("AtlasTexture_gr6b7")
 }],
 "loop": true,
 "name": &"jumping",
@@ -84,7 +84,6 @@ z_index = 5
 collision_layer = 3
 script = ExtResource("1_lm4f6")
 jump_end_early_gravity_mod = 1
-max_speed = 105
 walljump_force = 230
 walljump_speed = 500
 wall_friction = 60
@@ -94,7 +93,7 @@ visibility_layer = 2
 z_index = 1
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_id4em")
-animation = &"idle"
+animation = &"jumping"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -118,3 +117,5 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_top_margin = 0.45
+
+[connection signal="tree_exited" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_tree_exited"]

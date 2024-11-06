@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl1wyr2ngnao4"
-path="res://.godot/imported/Gnome32.png-9780bbe44cd20d4bbdf491e00b5b155a.ctex"
+path="res://.godot/imported/Gnome32.png-5409e8fd38fe7f13addb6ec1877d47d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gnome32.png"
-dest_files=["res://.godot/imported/Gnome32.png-9780bbe44cd20d4bbdf491e00b5b155a.ctex"]
+source_file="res://Assets/Gnomes/Gnome32.png"
+dest_files=["res://.godot/imported/Gnome32.png-5409e8fd38fe7f13addb6ec1877d47d3.ctex"]
 
 [params]
 

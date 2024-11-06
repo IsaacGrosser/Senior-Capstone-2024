@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgn6n8bb8bd4u"
-path="res://.godot/imported/Gnome16-animations.v2.png-07c1cfa6afeb119f5699ddbabc074163.ctex"
+uid="uid://bqbpqiaolmoif"
+path="res://.godot/imported/Gispatcho3.0-animated.png-9d803d67d6099d84cc431123a37b312f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gnome16-animations.v2.png"
-dest_files=["res://.godot/imported/Gnome16-animations.v2.png-07c1cfa6afeb119f5699ddbabc074163.ctex"]
+source_file="res://Assets/Gnomes/Gispatcho3.0-animated.png"
+dest_files=["res://.godot/imported/Gispatcho3.0-animated.png-9d803d67d6099d84cc431123a37b312f.ctex"]
 
 [params]
 

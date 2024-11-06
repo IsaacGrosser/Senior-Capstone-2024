@@ -14,5 +14,7 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	print("You have collected this item!")
+	Global.score += 1
+	print(str(Global.score))
 	queue_free()
 	emit_signal("collected")

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var timer = $Timer
 var randGen = RandomNumberGenerator.new()
+signal player_killed()
 
 func _on_area_2d_body_entered(body):
 	if body is CharacterBody2D:
@@ -13,6 +14,10 @@ func _on_area_2d_body_entered(body):
 		# Sets time to go at half speed! Must reset it!
 		Engine.time_scale = 0.5
 		timer.start()
+		
+		# emits a player killed signal that tells listener that player has died
+		# by a collision
+		emit_signal("player_killed", body)
 
 func _on_timer_timeout():
 	# Sets time to go at default speed

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b75bk5kcrq4dj"]
 
-[ext_resource type="Script" path="res://Scripts/level_switcher.gd" id="1_rif73"]
-[ext_resource type="PackedScene" uid="uid://bmpby3r3ai8e7" path="res://Scenes/level_1.tscn" id="1_swgh8"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_rif73"]
+[ext_resource type="PackedScene" uid="uid://bmpby3r3ai8e7" path="res://Scenes/Levels/level_1.tscn" id="1_swgh8"]
 
 [sub_resource type="Animation" id="Animation_of1ql"]
 resource_name = "fade_in"

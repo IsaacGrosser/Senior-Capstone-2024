@@ -2,12 +2,17 @@ extends Node
 
 @onready var current_level = $"Level 1"
 @onready var animation = $AnimationPlayer
+@onready var label = $UI/PanelContainer/MarginContainer/GridContainer/Label
 
 var next_level = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_level.connect("level_changed", handle_level_changed)
+
+
+func _process(_delta):
+	label.text = "Honeycomb: " + str(Global.score)
 
 
 func handle_level_changed(current_level_name: String):
@@ -23,7 +28,7 @@ func handle_level_changed(current_level_name: String):
 		_:
 			return
 	
-	next_level = load("res://Scenes/level_" + next_level_name + ".tscn").instantiate()
+	next_level = load("res://Scenes/Levels/level_" + next_level_name + ".tscn").instantiate()
 	animation.play("fade_in")
 	next_level.connect("level_changed", handle_level_changed)
 

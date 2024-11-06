@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1b08qwsl3i8v"]
+
+[sub_resource type="TileSet" id="TileSet_k3eev"]
+
+[node name="Forest Tile Map" type="TileMap"]
+tile_set = SubResource("TileSet_k3eev")
+format = 2

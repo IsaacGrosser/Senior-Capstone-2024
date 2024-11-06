@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://cxx00yc1f1c61"]
+[gd_scene load_steps=13 format=3 uid="uid://cxx00yc1f1c61"]
 
-[ext_resource type="Texture2D" uid="uid://caoqhyt8qy6ke" path="res://Assets/Simple tile map.png" id="1_828io"]
 [ext_resource type="Script" path="res://Scripts/fan.gd" id="1_tq541"]
 [ext_resource type="Texture2D" uid="uid://dbk7a2kgek5co" path="res://Assets/Robin with wind.png" id="2_2r36i"]
 
@@ -68,21 +67,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i5b7"]
 size = Vector2(16, 13)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a0chc"]
-atlas = ExtResource("1_828io")
-region = Rect2(16, 96, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xlhwn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a0chc")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Fan (wind blower ?)" type="Node2D"]
 position = Vector2(0, -8)
 script = ExtResource("1_tq541")
@@ -105,11 +89,6 @@ frame_progress = 0.139824
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D"]
 position = Vector2(-7.99999, -0.490324)
 shape = SubResource("RectangleShape2D_7i5b7")
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -98)
-scale = Vector2(0.8125, 0.75)
-sprite_frames = SubResource("SpriteFrames_xlhwn")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
