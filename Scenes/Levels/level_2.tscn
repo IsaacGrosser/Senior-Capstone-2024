@@ -54,4 +54,4 @@ rotation = -1.57158
 position = Vector2(-40, -64)
 
 [node name="Collectible2" parent="." instance=ExtResource("9_2x2bg")]
-position = Vector2(166, -113)
+position = Vector2(166, -104)
