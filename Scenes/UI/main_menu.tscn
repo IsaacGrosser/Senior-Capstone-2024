@@ -1,15 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://g6wfsuk1lils"]
+[gd_scene load_steps=8 format=3 uid="uid://g6wfsuk1lils"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Scripts/main_menu.gd" id="1_fer5l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtwj1"]
 bg_color = Color(0.817521, 0.817521, 0.817521, 0.996078)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqd43"]
 bg_color = Color(0.724643, 0.724643, 0.724642, 0.996078)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kb1r"]
 bg_color = Color(0.609331, 0.60933, 0.60933, 0.996078)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhlbj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0eek3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihvpd"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -42,6 +60,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vtwj1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vqd43")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kb1r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qhlbj")
 text = "Start"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
@@ -51,6 +70,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vtwj1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vqd43")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kb1r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0eek3")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
@@ -60,9 +80,10 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vtwj1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vqd43")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3kb1r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ihvpd")
 text = "Quit"
 
-[node name="Label" type="Label" parent="."]
+[node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
