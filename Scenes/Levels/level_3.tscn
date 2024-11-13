@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bg7r81lpwo3tm" path="res://Scenes/player.tscn" id="3_x4d7y"]
 [ext_resource type="PackedScene" uid="uid://bin62ljx73ngp" path="res://Scenes/collectible.tscn" id="4_v6joq"]
 [ext_resource type="PackedScene" uid="uid://dfcl6o8ln175g" path="res://Scenes/gatewayLeft.tscn" id="6_8es8w"]
-[ext_resource type="PackedScene" uid="uid://gnxapogrtyi7" path="res://Scenes/Deadly Objects/spikes.tscn" id="7_a86ns"]
 [ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="7_h5jce"]
+[ext_resource type="PackedScene" uid="uid://qjdd1s2e72da" path="res://Scenes/Deadly Objects/wood_spikes.tscn" id="8_dxb74"]
 [ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="8_jxejw"]
 
 [node name="level_3" type="Node2D"]
@@ -34,46 +34,42 @@ position = Vector2(280, 65)
 
 [node name="Spikes" type="Node" parent="."]
 
-[node name="Spikes" parent="Spikes" instance=ExtResource("7_a86ns")]
-position = Vector2(-32, -104)
-rotation = 1.5708
-
-[node name="Spikes2" parent="Spikes" instance=ExtResource("7_a86ns")]
-position = Vector2(-32, -120)
-rotation = 1.5708
-
-[node name="Spikes3" parent="Spikes" instance=ExtResource("7_a86ns")]
-position = Vector2(-32, -88)
-rotation = 1.5708
-
-[node name="Spikes4" parent="Spikes" instance=ExtResource("7_a86ns")]
-position = Vector2(-32, -152)
-rotation = 1.5708
-
-[node name="Spikes5" parent="Spikes" instance=ExtResource("7_a86ns")]
+[node name="Wood Spikes" parent="Spikes" instance=ExtResource("8_dxb74")]
 position = Vector2(-32, -168)
 rotation = 1.5708
 
-[node name="Spikes6" parent="Spikes" instance=ExtResource("7_a86ns")]
+[node name="Wood Spikes2" parent="Spikes" instance=ExtResource("8_dxb74")]
+position = Vector2(-32, -152)
+rotation = 1.5708
+
+[node name="Wood Spikes3" parent="Spikes" instance=ExtResource("8_dxb74")]
 position = Vector2(-32, -136)
 rotation = 1.5708
 
-[node name="Spikes7" parent="Spikes" instance=ExtResource("7_a86ns")]
-position = Vector2(352, -56)
-rotation = -1.5708
+[node name="Wood Spikes4" parent="Spikes" instance=ExtResource("8_dxb74")]
+position = Vector2(-32, -120)
+rotation = 1.5708
 
-[node name="Spikes8" parent="Spikes" instance=ExtResource("7_a86ns")]
-position = Vector2(352, -72)
-rotation = -1.5708
+[node name="Wood Spikes5" parent="Spikes" instance=ExtResource("8_dxb74")]
+position = Vector2(-32, -104)
+rotation = 1.5708
 
-[node name="Spikes9" parent="Spikes" instance=ExtResource("7_a86ns")]
+[node name="Wood Spikes6" parent="Spikes" instance=ExtResource("8_dxb74")]
+position = Vector2(-32, -88)
+rotation = 1.5708
+
+[node name="Wood Spikes7" parent="Spikes" instance=ExtResource("8_dxb74")]
 position = Vector2(352, -104)
 rotation = -1.5708
 
-[node name="Spikes10" parent="Spikes" instance=ExtResource("7_a86ns")]
-position = Vector2(352, -120)
+[node name="Wood Spikes8" parent="Spikes" instance=ExtResource("8_dxb74")]
+position = Vector2(352, -88)
 rotation = -1.5708
 
-[node name="Spikes11" parent="Spikes" instance=ExtResource("7_a86ns")]
-position = Vector2(352, -88)
+[node name="Wood Spikes9" parent="Spikes" instance=ExtResource("8_dxb74")]
+position = Vector2(352, -72)
+rotation = -1.5708
+
+[node name="Wood Spikes10" parent="Spikes" instance=ExtResource("8_dxb74")]
+position = Vector2(352, -56)
 rotation = -1.5708

@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://gnxapogrtyi7"]
+[gd_scene load_steps=4 format=3 uid="uid://cia8iy3nvagno"]
 
-[ext_resource type="Script" path="res://Spikes.gd" id="1_o4kpl"]
-[ext_resource type="Texture2D" uid="uid://cqonglmx1ixv6" path="res://Assets/Thorns & Spikes/Spikes And Thorns.png" id="2_6wa1c"]
+[ext_resource type="Script" path="res://Spikes.gd" id="1_sb1k3"]
+[ext_resource type="Texture2D" uid="uid://131pewixsrwv" path="res://Assets/Thorns & Spikes/Spikes And Thorns.png" id="2_vko1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqf6p"]
 size = Vector2(14, 14)
 
-[node name="Grass Spikes" type="Node2D"]
-script = ExtResource("1_o4kpl")
+[node name="Rock Spikes" type="Node2D"]
+script = ExtResource("1_sb1k3")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -15,7 +15,7 @@ one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("2_6wa1c")
+texture = ExtResource("2_vko1a")
 region_enabled = true
 region_rect = Rect2(32, 32, 16, 16)
 
