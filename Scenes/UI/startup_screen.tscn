@@ -1,0 +1,137 @@
+[gd_scene load_steps=19 format=3 uid="uid://ng14gbgp8df"]
+
+[ext_resource type="Texture2D" uid="uid://dfh5u0iy03msq" path="res://Assets/EyesUpStudiosLogoV1.png" id="1_is1np"]
+[ext_resource type="Script" path="res://Scripts/UI-Scripts/startup_screen.gd" id="1_xe078"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfajs"]
+atlas = ExtResource("1_is1np")
+region = Rect2(0, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn0re"]
+atlas = ExtResource("1_is1np")
+region = Rect2(256, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vail1"]
+atlas = ExtResource("1_is1np")
+region = Rect2(512, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b5bj"]
+atlas = ExtResource("1_is1np")
+region = Rect2(768, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svk27"]
+atlas = ExtResource("1_is1np")
+region = Rect2(1024, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxolp"]
+atlas = ExtResource("1_is1np")
+region = Rect2(1280, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sik0n"]
+atlas = ExtResource("1_is1np")
+region = Rect2(1536, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waf1n"]
+atlas = ExtResource("1_is1np")
+region = Rect2(1792, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j88pv"]
+atlas = ExtResource("1_is1np")
+region = Rect2(2048, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub5ib"]
+atlas = ExtResource("1_is1np")
+region = Rect2(2304, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lq7n"]
+atlas = ExtResource("1_is1np")
+region = Rect2(2560, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7f4n"]
+atlas = ExtResource("1_is1np")
+region = Rect2(2816, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5r4d"]
+atlas = ExtResource("1_is1np")
+region = Rect2(3072, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iej6g"]
+atlas = ExtResource("1_is1np")
+region = Rect2(3328, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmgqd"]
+atlas = ExtResource("1_is1np")
+region = Rect2(3584, 0, 256, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf3rq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfajs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn0re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vail1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8b5bj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svk27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxolp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sik0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waf1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j88pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub5ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lq7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7f4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5r4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iej6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmgqd")
+}],
+"loop": false,
+"name": &"Studio Animation",
+"speed": 10.0
+}]
+
+[node name="Startup Screen" type="Node2D"]
+script = ExtResource("1_xe078")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(7.5, 7.5)
+sprite_frames = SubResource("SpriteFrames_pf3rq")
+animation = &"Studio Animation"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Start Game Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Start Game Timer" to="." method="_on_start_game_timer_timeout"]

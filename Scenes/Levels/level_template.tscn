@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjcf7lay07jrj"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_q7bgq"]
+[ext_resource type="TileSet" uid="uid://dl6nvjkfk0g6l" path="res://Scenes/TileSets/default-tile-set.tres" id="2_rbiiv"]
+[ext_resource type="PackedScene" uid="uid://bg7r81lpwo3tm" path="res://Scenes/player.tscn" id="3_ihk0c"]
+[ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="5_qhoeg"]
+[ext_resource type="PackedScene" uid="uid://c0p4a1jf42bke" path="res://Scenes/gatewayRight.tscn" id="6_bwqgq"]
+[ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="7_s488a"]
+
+[node name="level_3" type="Node2D"]
+script = ExtResource("1_q7bgq")
+level_name = "level_3"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_rbiiv")
+format = 2
+layer_0/tile_data = PackedInt32Array(2, 65537, 5)
+
+[node name="Player" parent="." instance=ExtResource("3_ihk0c")]
+position = Vector2(40, 0)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_qhoeg")]
+
+[node name="Killzone" parent="." instance=ExtResource("7_s488a")]
+position = Vector2(0, 66)
+
+[node name="Gateway" parent="." instance=ExtResource("6_bwqgq")]
+position = Vector2(133, 0)

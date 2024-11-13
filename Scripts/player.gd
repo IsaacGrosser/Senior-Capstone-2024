@@ -3,6 +3,7 @@ extends CharacterBody2D
 ## GRAVITY VARIABLES
 const gravity_clamp : float = 300 # MAX GRAVITY
 @export var base_gravity : float = 12 
+@export var gravity_mod : float = 0.5 # THIS IS FOR FALLING GRAVITY AMP
 @export var float_gravity : int = 40
 @export var jump_end_early_gravity_mod : int = 10
 
@@ -59,6 +60,8 @@ func _physics_process(delta):
 
 		move()
 
+		# drop_down()
+
 		play_animation()
 
 		check_walljump()
@@ -93,6 +96,8 @@ func set_gravity():
 	# add gravity to the player as they are not on the floor
 	velocity.y += base_gravity
 	
+	if velocity.y > 0:
+		velocity.y += base_gravity * gravity_mod
 	# clamp the y velocity to the gravity max
 	if velocity.y > gravity_clamp:
 		velocity.y = gravity_clamp
@@ -184,6 +189,14 @@ func check_walljump():
 	if ray_cast_right.is_colliding() and Input.is_action_just_pressed("jump") and not is_on_floor():
 		velocity.y = -walljump_force
 		velocity.x += -walljump_speed
+
+
+## ALLOW FOR DROPPING THROUGH ONE WAY PLATFORMS
+#func drop_down():
+	#if Input.action_press("move_down") and :
+		#
+
+
 
 
 

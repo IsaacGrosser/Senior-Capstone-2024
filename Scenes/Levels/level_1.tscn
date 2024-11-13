@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://gnxapogrtyi7" path="res://Scenes/Deadly Objects/spikes.tscn" id="9_cj7ad"]
 
 [node name="Level 1" type="Node2D"]
+self_modulate = Color(0.262745, 0.309804, 0.435294, 1)
 script = ExtResource("1_g824m")
 level_name = "level_1"
 

@@ -24,7 +24,15 @@ func handle_level_changed(current_level_name: String):
 		"level_2":
 			next_level_name = "3"
 		"level_3":
-			next_level_name = "1"
+			next_level_name = "4"
+		"level_4":
+			next_level_name = "5"
+		"level_5":
+			next_level_name = "6"
+		"level_6":
+			next_level_name = "7"
+		"level_7":
+			next_level_name = "8"
 		_:
 			return
 	
