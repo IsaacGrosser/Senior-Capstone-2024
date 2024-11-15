@@ -65,3 +65,5 @@ theme_override_fonts/font = ExtResource("10_agq7u")
 theme_override_font_sizes/font_size = 15
 text = "This way to the gate!  -->"
 horizontal_alignment = 1
+
+[connection signal="player_died" from="Killzone" to="." method="_on_killzone_player_died"]

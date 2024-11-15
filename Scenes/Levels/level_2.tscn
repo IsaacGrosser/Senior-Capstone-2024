@@ -36,3 +36,5 @@ position = Vector2(311, -111)
 
 [node name="Collectible2" parent="." instance=ExtResource("9_2x2bg")]
 position = Vector2(418, -31)
+
+[connection signal="player_died" from="Killzone" to="." method="_on_killzone_player_died"]

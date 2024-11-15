@@ -73,3 +73,5 @@ rotation = -1.5708
 [node name="Wood Spikes10" parent="Spikes" instance=ExtResource("8_dxb74")]
 position = Vector2(352, -56)
 rotation = -1.5708
+
+[connection signal="player_died" from="Killzone" to="." method="_on_killzone_player_died"]

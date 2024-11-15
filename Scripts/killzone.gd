@@ -1,5 +1,6 @@
 extends Area2D
 
+signal player_died()
 @onready var timer = $Timer
 var randGen = RandomNumberGenerator.new()
 
@@ -19,5 +20,6 @@ func _on_timer_timeout():
 	# Sets time to go at default speed
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
+	emit_signal("player_died")
 
 
