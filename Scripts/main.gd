@@ -3,13 +3,14 @@ extends Node
 @onready var current_level = $"Level 1"
 @onready var animation = $AnimationPlayer
 @onready var label = $UI/PanelContainer/MarginContainer/GridContainer/Label
+@onready var audio = $AudioStreamPlayer2D
 
 var next_level = null
-
+var current_level_name = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_level.connect("level_changed", handle_level_changed)
-
+	audio.play()
 
 func _process(_delta):
 	label.text = "Honeycomb: " + str(Global.score)
@@ -50,4 +51,9 @@ func _on_animation_player_animation_finished(anim_name):
 			next_level = null
 			animation.play("fade_out")
 			Global.can_move = true
+
+
+func _on_audio_stream_player_2d_finished():
+	audio.play()
+
 

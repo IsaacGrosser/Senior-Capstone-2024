@@ -16,3 +16,5 @@ func on_switch_level():
 	emit_signal("level_changed", level_name)
 
 
+func get_level_name():
+	return level_name

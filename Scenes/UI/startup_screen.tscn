@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://ng14gbgp8df"]
+[gd_scene load_steps=20 format=3 uid="uid://ng14gbgp8df"]
 
 [ext_resource type="Texture2D" uid="uid://dfh5u0iy03msq" path="res://Assets/EyesUpStudiosLogoV1.png" id="1_is1np"]
 [ext_resource type="Script" path="res://Scripts/UI-Scripts/startup_screen.gd" id="1_xe078"]
+[ext_resource type="AudioStream" uid="uid://dy23y4nccqhpd" path="res://Assets/Sounds/Stings/logo-intro-music-string.mp3" id="3_hoxe8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yfajs"]
 atlas = ExtResource("1_is1np")
@@ -129,8 +130,11 @@ animation = &"Studio Animation"
 one_shot = true
 
 [node name="Start Game Timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hoxe8")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -3,50 +3,50 @@
 [ext_resource type="Script" path="res://Scripts/collectible.gd" id="1_febhj"]
 [ext_resource type="Texture2D" uid="uid://bltei33p2wmux" path="res://Assets/Honeycomb-v1.png" id="2_0wgfw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxh6w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0r4l"]
 atlas = ExtResource("2_0wgfw")
-region = Rect2(16, 16, 16, 32)
+region = Rect2(48, 0, 16, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ipd7w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj3fr"]
 atlas = ExtResource("2_0wgfw")
-region = Rect2(80, 16, 16, 32)
+region = Rect2(112, 0, 16, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_epovl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6k2q"]
 atlas = ExtResource("2_0wgfw")
-region = Rect2(144, 16, 16, 32)
+region = Rect2(176, 0, 16, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w4ehi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6yg6"]
 atlas = ExtResource("2_0wgfw")
-region = Rect2(208, 16, 16, 32)
+region = Rect2(240, 0, 16, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x41rw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_11typ"]
 atlas = ExtResource("2_0wgfw")
-region = Rect2(272, 16, 16, 32)
+region = Rect2(304, 0, 16, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sb3kn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pibnc"]
 atlas = ExtResource("2_0wgfw")
-region = Rect2(336, 16, 16, 32)
+region = Rect2(368, 0, 16, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_deoap"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wxh6w")
+"texture": SubResource("AtlasTexture_m0r4l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ipd7w")
+"texture": SubResource("AtlasTexture_kj3fr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_epovl")
+"texture": SubResource("AtlasTexture_e6k2q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w4ehi")
+"texture": SubResource("AtlasTexture_m6yg6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x41rw")
+"texture": SubResource("AtlasTexture_11typ")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sb3kn")
+"texture": SubResource("AtlasTexture_pibnc")
 }],
 "loop": true,
 "name": &"default",
@@ -65,8 +65,7 @@ script = ExtResource("1_febhj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_deoap")
 autoplay = "default"
-frame = 4
-frame_progress = 0.410602
+frame_progress = 0.300615
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -8)

@@ -1173,7 +1173,6 @@ position = Vector2(0, -3)
 
 [node name="Player" parent="." instance=ExtResource("1_fk4dx")]
 position = Vector2(32, -56)
-max_speed = 90
 walljump_force = 225
 
 [node name="TileMap" type="TileMap" parent="."]
