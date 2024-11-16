@@ -3,11 +3,12 @@ extends Node2D
 @onready var timer = $Timer
 @onready var animation = $AnimatedSprite2D
 @onready var start_game_timer = $"Start Game Timer"
+@onready var audio = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer.start()
-
+	audio.play()
 
 func _on_timer_timeout():
 	animation.play()
