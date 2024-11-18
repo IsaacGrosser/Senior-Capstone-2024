@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b35h0l0nyfp8t"]
+[gd_scene load_steps=10 format=3 uid="uid://b35h0l0nyfp8t"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_rcm8i"]
 [ext_resource type="TileSet" uid="uid://dl6nvjkfk0g6l" path="res://Scenes/TileSets/default-tile-set.tres" id="2_bqd1g"]
@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="5_wi01k"]
 [ext_resource type="PackedScene" uid="uid://c0p4a1jf42bke" path="res://Scenes/gatewayRight.tscn" id="6_00cfc"]
 [ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="7_kj70j"]
+[ext_resource type="PackedScene" uid="uid://60568lnryvyp" path="res://Scenes/Enemies/bug.tscn" id="9_1tln0"]
 [ext_resource type="PackedScene" uid="uid://bin62ljx73ngp" path="res://Scenes/collectible.tscn" id="9_2x2bg"]
 
-[node name="Level 2" type="Node2D"]
+[node name="Level 2" type="Node2D" groups=["level"]]
 script = ExtResource("1_rcm8i")
 level_name = "level_2"
 
@@ -36,5 +37,8 @@ position = Vector2(311, -111)
 
 [node name="Collectible2" parent="." instance=ExtResource("9_2x2bg")]
 position = Vector2(418, -31)
+
+[node name="Bug" parent="." instance=ExtResource("9_1tln0")]
+position = Vector2(130, -7)
 
 [connection signal="player_died" from="Killzone" to="." method="_on_killzone_player_died"]

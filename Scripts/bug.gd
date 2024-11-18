@@ -1,13 +1,11 @@
 extends Node2D
 
-const SPEED = 50
-
-var direction = 1
-
-# gets variables of animation sprite and raycasts
+@onready var ray_cast_left = $Raycasts/RayCastLeft
+@onready var ray_cast_right = $Raycasts/RayCastRight
 @onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var ray_cast_right = $RayCastRight
-@onready var ray_cast_left = $RayCastLeft
+
+const SPEED = 50
+var direction = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,4 +23,5 @@ func _process(delta):
 	# moves position of x based on the direction the character is facing and
 	# the speed they can move, and the delta to account for dif framerates
 	position.x += direction * SPEED * delta
+
 

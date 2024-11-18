@@ -1,20 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhfbaqpv5nvp2"]
+[gd_scene load_steps=7 format=3 uid="uid://dhfbaqpv5nvp2"]
 
 [ext_resource type="Texture2D" uid="uid://bl1wyr2ngnao4" path="res://Assets/Gnomes/Gnome32.png" id="1_12x4b"]
 [ext_resource type="Script" path="res://Scripts/enemy_gnome.gd" id="1_eyluo"]
 [ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="2_ulcnd"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhei4"]
-atlas = ExtResource("1_12x4b")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dit5q"]
-atlas = ExtResource("1_12x4b")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qjw4w"]
-atlas = ExtResource("1_12x4b")
-region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4702"]
 atlas = ExtResource("1_12x4b")
@@ -23,15 +11,6 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vr32"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jhei4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dit5q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qjw4w")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a4702")
 }],
@@ -49,12 +28,11 @@ script = ExtResource("1_eyluo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7vr32")
 autoplay = "default"
-frame = 1
 frame_progress = 0.533007
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_ulcnd")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_kvj60")
 
