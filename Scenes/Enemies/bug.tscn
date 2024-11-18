@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://60568lnryvyp"]
+
+[ext_resource type="Script" path="res://Scripts/bug.gd" id="1_hjinb"]
+[ext_resource type="Texture2D" uid="uid://u3njm2wnna2w" path="res://Assets/Bugs/BugWithAnimation.png" id="1_yyqor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r5wp"]
+atlas = ExtResource("1_yyqor")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsjtg"]
+atlas = ExtResource("1_yyqor")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahamf"]
+atlas = ExtResource("1_yyqor")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qncx5"]
+atlas = ExtResource("1_yyqor")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84iye"]
+atlas = ExtResource("1_yyqor")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jjab"]
+atlas = ExtResource("1_yyqor")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r21ua"]
+atlas = ExtResource("1_yyqor")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5282e"]
+atlas = ExtResource("1_yyqor")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urhro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r5wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsjtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahamf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qncx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84iye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jjab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r21ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5282e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvga2"]
+radius = 6.0
+
+[node name="Bug" type="Node2D"]
+script = ExtResource("1_hjinb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_urhro")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+shape = SubResource("CircleShape2D_jvga2")
+
+[node name="Raycasts" type="Node" parent="."]
+
+[node name="RayCastLeft" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-15, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(14, 0)
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

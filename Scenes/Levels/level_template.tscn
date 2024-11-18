@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c0p4a1jf42bke" path="res://Scenes/gatewayRight.tscn" id="6_bwqgq"]
 [ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="7_s488a"]
 
-[node name="level_template" type="Node2D"]
+[node name="level_template" type="Node2D" groups=["level"]]
 script = ExtResource("1_q7bgq")
 level_name = "level_template"
 

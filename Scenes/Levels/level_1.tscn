@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmpby3r3ai8e7"]
+[gd_scene load_steps=12 format=3 uid="uid://bmpby3r3ai8e7"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_g824m"]
 [ext_resource type="PackedScene" uid="uid://c1b08qwsl3i8v" path="res://Assets/Tile Maps/forest_tile_map.tscn" id="2_1k0gb"]
@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="9_6jhjx"]
 [ext_resource type="PackedScene" uid="uid://gnxapogrtyi7" path="res://Scenes/Deadly Objects/grass_spikes.tscn" id="9_cj7ad"]
 [ext_resource type="FontFile" uid="uid://pof8xlt2ee5" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="10_agq7u"]
+[ext_resource type="PackedScene" uid="uid://60568lnryvyp" path="res://Scenes/Enemies/bug.tscn" id="11_sht4k"]
 
-[node name="Level 1" type="Node2D"]
+[node name="Level 1" type="Node2D" groups=["level"]]
 self_modulate = Color(0.262745, 0.309804, 0.435294, 1)
 script = ExtResource("1_g824m")
 level_name = "level_1"
@@ -65,5 +66,8 @@ theme_override_fonts/font = ExtResource("10_agq7u")
 theme_override_font_sizes/font_size = 15
 text = "This way to the gate!  -->"
 horizontal_alignment = 1
+
+[node name="Bug" parent="." instance=ExtResource("11_sht4k")]
+position = Vector2(961, 11)
 
 [connection signal="player_died" from="Killzone" to="." method="_on_killzone_player_died"]
