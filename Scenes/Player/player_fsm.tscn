@@ -1,37 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://bg7r81lpwo3tm"]
+[gd_scene load_steps=13 format=3 uid="uid://nwydip70qfkn"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_lm4f6"]
-[ext_resource type="Texture2D" uid="uid://pq6umdk6cgtv" path="res://Assets/Gnomes/Gnome16-animations.v3.png" id="2_ejgyw"]
+[ext_resource type="Script" path="res://Scripts/Player/player_fsm.gd" id="1_27rvh"]
+[ext_resource type="Texture2D" uid="uid://pq6umdk6cgtv" path="res://Assets/Gnomes/Gnome16-animations.v3.png" id="1_ru0ml"]
+[ext_resource type="Script" path="res://Scripts/State Machine/State Machine.gd" id="3_focnn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sge0o"]
-atlas = ExtResource("2_ejgyw")
+atlas = ExtResource("1_ru0ml")
 region = Rect2(128, 10, 16, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktn60"]
-atlas = ExtResource("2_ejgyw")
+atlas = ExtResource("1_ru0ml")
 region = Rect2(144, 10, 16, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rvad5"]
-atlas = ExtResource("2_ejgyw")
+atlas = ExtResource("1_ru0ml")
 region = Rect2(176, 10, 16, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd7qf"]
-atlas = ExtResource("2_ejgyw")
+atlas = ExtResource("1_ru0ml")
 region = Rect2(192, 10, 16, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdgin"]
-atlas = ExtResource("2_ejgyw")
+atlas = ExtResource("1_ru0ml")
 region = Rect2(16, 10, 16, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvgrs"]
-atlas = ExtResource("2_ejgyw")
+atlas = ExtResource("1_ru0ml")
 region = Rect2(32, 10, 16, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gr6b7"]
-atlas = ExtResource("2_ejgyw")
+atlas = ExtResource("1_ru0ml")
 region = Rect2(80, 10, 16, 22)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_id4em"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xi8ta"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -75,49 +76,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrog0"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xuhor"]
 radius = 4.0
 height = 10.0
 
-[node name="Player" type="CharacterBody2D"]
-z_index = 5
-collision_layer = 3
-script = ExtResource("1_lm4f6")
-jump_end_early_gravity_mod = 1
-walljump_force = 230
-walljump_speed = 500
-wall_friction = 60
+[node name="Player-FSM" type="CharacterBody2D"]
+script = ExtResource("1_27rvh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2
 z_index = 1
 position = Vector2(0, -11)
-sprite_frames = SubResource("SpriteFrames_id4em")
-animation = &"floating"
+sprite_frames = SubResource("SpriteFrames_xi8ta")
+animation = &"falling"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
-shape = SubResource("CapsuleShape2D_yrog0")
+shape = SubResource("CapsuleShape2D_xuhor")
 
-[node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(0, -5)
-target_position = Vector2(-5, 0)
-
-[node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(0, -5)
-target_position = Vector2(5, 0)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -8)
-zoom = Vector2(5, 5)
-process_callback = 0
-limit_left = -48
-limit_bottom = 64
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-
-[connection signal="tree_exited" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_tree_exited"]
+[node name="State Machine" type="Node" parent="."]
+script = ExtResource("3_focnn")

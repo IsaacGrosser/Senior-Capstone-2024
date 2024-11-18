@@ -48,10 +48,10 @@ follow_viewport_enabled = true
 
 [node name="Overlay" type="ColorRect" parent="CanvasLayer"]
 visibility_layer = 513
-offset_left = -300.0
-offset_top = -902.0
-offset_right = 2318.0
-offset_bottom = 543.0
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 1925.0
+offset_bottom = 1086.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
