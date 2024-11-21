@@ -1,8 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://nwydip70qfkn"]
+[gd_scene load_steps=21 format=3 uid="uid://nwydip70qfkn"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_fsm.gd" id="1_27rvh"]
 [ext_resource type="Texture2D" uid="uid://pq6umdk6cgtv" path="res://Assets/Gnomes/Gnome16-animations.v3.png" id="1_ru0ml"]
 [ext_resource type="Script" path="res://Scripts/State Machine/State Machine.gd" id="3_focnn"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Idle.gd" id="4_cojeh"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Run.gd" id="5_ehy7q"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Jump.gd" id="6_0a84q"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/CoyoteTime.gd" id="7_3djvm"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Fall.gd" id="7_46jsn"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Float.gd" id="8_pbvb0"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Wall.gd" id="9_r4yyg"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/WallJump.gd" id="10_1kjq5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sge0o"]
 atlas = ExtResource("1_ru0ml")
@@ -82,18 +90,94 @@ height = 10.0
 
 [node name="Player-FSM" type="CharacterBody2D"]
 script = ExtResource("1_27rvh")
+walljump_force = 230
+walljump_speed = 500
+wall_friction = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2
 z_index = 1
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_xi8ta")
-animation = &"falling"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_xuhor")
 
-[node name="State Machine" type="Node" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -8)
+zoom = Vector2(5, 5)
+process_callback = 0
+limit_left = -48
+limit_bottom = 64
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(-5, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(5, 0)
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_focnn")
+initial_state = NodePath("Idle")
+
+[node name="Locked" type="Node" parent="State Machine"]
+
+[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
+script = ExtResource("4_cojeh")
+character_body = NodePath("../..")
+animation_player = NodePath("../../AnimatedSprite2D")
+
+[node name="Run" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
+script = ExtResource("5_ehy7q")
+character_body = NodePath("../..")
+animation_player = NodePath("../../AnimatedSprite2D")
+
+[node name="Jump" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+script = ExtResource("6_0a84q")
+character_body = NodePath("../..")
+animation_player = NodePath("../../AnimatedSprite2D")
+raycast_left = NodePath("../../RayCastLeft")
+raycast_right = NodePath("../../RayCastRight")
+
+[node name="CoyoteTime" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
+script = ExtResource("7_3djvm")
+character_body = NodePath("../..")
+animation_player = NodePath("../../AnimatedSprite2D")
+
+[node name="Fall" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+script = ExtResource("7_46jsn")
+character_body = NodePath("../..")
+animation_player = NodePath("../../AnimatedSprite2D")
+raycast_left = NodePath("../../RayCastLeft")
+raycast_right = NodePath("../../RayCastRight")
+
+[node name="Float" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+script = ExtResource("8_pbvb0")
+character_body = NodePath("../..")
+animation_player = NodePath("../../AnimatedSprite2D")
+raycast_left = NodePath("../../RayCastLeft")
+raycast_right = NodePath("../../RayCastRight")
+
+[node name="Wall" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+script = ExtResource("9_r4yyg")
+character_body = NodePath("../..")
+animation_player = NodePath("../../AnimatedSprite2D")
+raycast_left = NodePath("../../RayCastLeft")
+raycast_right = NodePath("../../RayCastRight")
+
+[node name="WallJump" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+script = ExtResource("10_1kjq5")
+character_body = NodePath("../..")
+animation_player = NodePath("../../AnimatedSprite2D")
+raycast_left = NodePath("../../RayCastLeft")
+raycast_right = NodePath("../../RayCastRight")

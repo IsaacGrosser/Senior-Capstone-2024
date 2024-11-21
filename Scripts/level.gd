@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var collectible = $Collectible
 signal level_changed()
 @export var level_name = "level"
 @onready var gateway = $Gateway

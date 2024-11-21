@@ -74,11 +74,11 @@ func _physics_process(delta):
 
 
 func move():
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right") && !Input.is_action_pressed("move_left"):
 		move_right()
 		if ray_cast_right.is_colliding() and not is_on_floor() and velocity.y > 0:
 			velocity.y = wall_friction
-	elif Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left") && !Input.is_action_pressed("move_right"):
 		move_left()
 		if ray_cast_left.is_colliding() and not is_on_floor() and velocity.y > 0:
 			velocity.y = wall_friction
