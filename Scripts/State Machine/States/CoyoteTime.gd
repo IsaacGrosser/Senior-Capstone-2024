@@ -1,5 +1,4 @@
-extends State
-class_name CoyoteTime
+class_name CoyoteTime extends State
 
 @export var character_body : CharacterBody2D
 @export var animation_player : AnimatedSprite2D

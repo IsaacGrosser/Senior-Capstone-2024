@@ -1,5 +1,4 @@
-extends State
-class_name Run
+class_name Run extends State
 
 @export var character_body : CharacterBody2D
 @export var animation_player : AnimatedSprite2D

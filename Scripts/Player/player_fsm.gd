@@ -1,27 +1,9 @@
 class_name Player extends CharacterBody2D
 
-var move_speed : float
-var jump_velocity : float
-var move_direction : int
-
 ## GRAVITY VARIABLES
 @export var gravity_clamp : float = 200 # MAX GRAVITY
 @export var base_gravity : float = 12 
 @export var gravity_mod : float = 0.5 # THIS IS FOR FALLING GRAVITY AMP
-@export var float_gravity : int = 40
-@export var jump_end_early_gravity_mod : int = 10
-
-## SPEED / MOVEMENT VARIABLES 
-@export var max_speed : int = 90
-@export var acceleration : int = 12
-
-## JUMP VARIABLE
-@export var jump_force : int = 275
-
-## WALL JUMP VARIABLES / FRICTION VARIABLES
-@export var walljump_force : int = 200
-@export var walljump_speed : int = 400
-@export var wall_friction : int = 30
 
 ## COYOTE VARIABLES 
 @export var coyote_buffer_length : int = 10
@@ -32,10 +14,6 @@ var coyote_counter : int = 0 # variable to hold current count state
 @export var jump_buffer_length : int = 8
 var jump_buffer_counter : int = 0 # variable to hold current count state
 var jump_buffer_active : bool = false
-
-## INPUT VARIABLES
-
-## STATE MACHINE
 
 func _ready():
 	pass

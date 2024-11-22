@@ -91,9 +91,6 @@ height = 10.0
 [node name="Player-FSM" type="CharacterBody2D"]
 safe_margin = 0.09
 script = ExtResource("1_27rvh")
-walljump_force = 230
-walljump_speed = 500
-wall_friction = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2
