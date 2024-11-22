@@ -1,12 +1,12 @@
 class_name Player extends CharacterBody2D
 
 ## GRAVITY VARIABLES
-@export var gravity_clamp : float = 200 # MAX GRAVITY
+@export var gravity_clamp : float = 250 # MAX GRAVITY
 @export var base_gravity : float = 12 
 @export var gravity_mod : float = 0.5 # THIS IS FOR FALLING GRAVITY AMP
 
 ## COYOTE VARIABLES 
-@export var coyote_buffer_length : int = 10
+@export var coyote_buffer_length : int = 11
 var coyote_counter : int = 0 # variable to hold current count state
 
 ## JUMP BUFFER VARIABLES

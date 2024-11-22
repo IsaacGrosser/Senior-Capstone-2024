@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://nwydip70qfkn"]
+[gd_scene load_steps=22 format=3 uid="uid://nwydip70qfkn"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_fsm.gd" id="1_27rvh"]
 [ext_resource type="Texture2D" uid="uid://pq6umdk6cgtv" path="res://Assets/Gnomes/Gnome16-animations.v3.png" id="1_ru0ml"]
 [ext_resource type="Script" path="res://Scripts/State Machine/State Machine.gd" id="3_focnn"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Idle.gd" id="4_cojeh"]
+[ext_resource type="Script" path="res://Scripts/State Machine/States/Locked.gd" id="4_lrgcq"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Run.gd" id="5_ehy7q"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Jump.gd" id="6_0a84q"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/CoyoteTime.gd" id="7_3djvm"]
@@ -89,6 +90,8 @@ radius = 4.0
 height = 10.0
 
 [node name="Player-FSM" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 safe_margin = 0.09
 script = ExtResource("1_27rvh")
 
@@ -120,7 +123,10 @@ drag_vertical_enabled = true
 script = ExtResource("3_focnn")
 initial_state = NodePath("Idle")
 
-[node name="Locked" type="Node" parent="State Machine"]
+[node name="Locked" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
+script = ExtResource("4_lrgcq")
+character_body = NodePath("../..")
+animation_player = NodePath("../../AnimatedSprite2D")
 
 [node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
 script = ExtResource("4_cojeh")

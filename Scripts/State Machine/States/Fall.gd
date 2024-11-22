@@ -13,9 +13,9 @@ class_name Fall extends State
 func Enter():
 	state_name = "Fall"
 	print("entered FALL state")
-	if animation_player:
+	if animation_player && !animation_player.animation == "falling":
 		animation_player.play("falling")
-	if character_body && character_body.velocity.y >= -short_jump_threshold:
+	if character_body && character_body.velocity.y >= -short_jump_threshold && previous_state == "Jump":
 		character_body.velocity.y = jump_end_early_gravity_mod
 
 func Exit():
@@ -30,12 +30,12 @@ func Physics_Update(delta: float):
 		character_body.velocity.x += air_horizontal_acceleration * 2 # multiply to exponentially increase acc
 		if character_body.velocity.x >= max_horizontal_speed:
 			character_body.velocity.x = max_horizontal_speed
-	if Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left"):
 		animation_player.flip_h = true
 		character_body.velocity.x -= air_horizontal_acceleration * 2 # multiply to exponentially increase acc
 		if character_body.velocity.x <= -max_horizontal_speed:
 			character_body.velocity.x = -max_horizontal_speed
-	if Input.is_action_just_released("move_left") or Input.is_action_just_released("move_right"):
+	else:
 		character_body.velocity.x = lerp(character_body.velocity.x, 0.0, 0.1)
 	
 	handle_transitions()
@@ -49,4 +49,5 @@ func handle_transitions():
 		
 	if character_body.is_on_wall_only() && (Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left")):
 		Transitioned.emit(self, "Wall")
-	
+	if !Global.can_move:
+		Transitioned.emit(self, "Locked")

@@ -46,6 +46,7 @@ func handle_transitions():
 		Transitioned.emit(self, "Fall")
 	if Input.is_action_pressed("jump") && character_body.velocity.y >= 0:
 		Transitioned.emit(self, "Float")
-
+	if !Global.can_move:
+		Transitioned.emit(self, "Locked")
 
 

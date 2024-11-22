@@ -6,7 +6,6 @@ class_name Idle extends State
 func Enter():
 	state_name = "Idle"
 	print("entered IDLE state")
-	print("My previous state is " + previous_state)
 	if animation_player:
 		animation_player.play("idle")
 
@@ -32,7 +31,6 @@ func handle_transitions():
 	
 	if character_body && character_body.velocity.y >= 1:
 		Transitioned.emit(self, "CoyoteTime")
-
-
-
-
+		
+	if !Global.can_move:
+		Transitioned.emit(self, "Locked")

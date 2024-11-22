@@ -42,5 +42,6 @@ func handle_transitions():
 	if character_body && character_body.is_on_wall_only() && (Input.is_action_pressed("move_left") 
 		or Input.is_action_pressed("move_right")):
 		Transitioned.emit(self, "Wall")
-
+	if !Global.can_move:
+		Transitioned.emit(self, "Locked")
 

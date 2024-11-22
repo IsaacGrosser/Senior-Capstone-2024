@@ -45,7 +45,9 @@ func handle_transitions():
 	if character_body:
 		if character_body.is_on_floor():
 			Transitioned.emit(self, "Idle")
-
+		
+	if !Global.can_move:
+		Transitioned.emit(self, "Locked")
 
 
 
