@@ -10,7 +10,7 @@ var coyote_counter : int = 0 # variable to hold current count state
 
 func Enter():
 	state_name = "CoyoteTime"
-	print("ENTERED COYOTE TIME STATE")
+	print("entered COYOTE TIME state")
 	coyote_counter = coyote_buffer_length
 
 func Exit():
@@ -22,7 +22,6 @@ func Update(delta: float):
 func Physics_Update(delta: float):
 	if coyote_counter > 0:
 		coyote_counter -= 1
-		print(coyote_counter)
 		
 	handle_transitions()
 
@@ -31,3 +30,5 @@ func handle_transitions():
 		Transitioned.emit(self, "Jump")
 	if coyote_counter <= 0:
 		Transitioned.emit(self, "Fall")
+	if character_body.is_on_wall_only() && (Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left")):
+		Transitioned.emit(self, "Wall")

@@ -89,6 +89,7 @@ radius = 4.0
 height = 10.0
 
 [node name="Player-FSM" type="CharacterBody2D"]
+safe_margin = 0.09
 script = ExtResource("1_27rvh")
 walljump_force = 230
 walljump_speed = 500
@@ -118,14 +119,6 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(0, -6)
-target_position = Vector2(-5, 0)
-
-[node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(0, -6)
-target_position = Vector2(5, 0)
-
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_focnn")
 initial_state = NodePath("Idle")
@@ -142,42 +135,32 @@ script = ExtResource("5_ehy7q")
 character_body = NodePath("../..")
 animation_player = NodePath("../../AnimatedSprite2D")
 
-[node name="Jump" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+[node name="Jump" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
 script = ExtResource("6_0a84q")
 character_body = NodePath("../..")
 animation_player = NodePath("../../AnimatedSprite2D")
-raycast_left = NodePath("../../RayCastLeft")
-raycast_right = NodePath("../../RayCastRight")
 
 [node name="CoyoteTime" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
 script = ExtResource("7_3djvm")
 character_body = NodePath("../..")
 animation_player = NodePath("../../AnimatedSprite2D")
 
-[node name="Fall" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+[node name="Fall" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
 script = ExtResource("7_46jsn")
 character_body = NodePath("../..")
 animation_player = NodePath("../../AnimatedSprite2D")
-raycast_left = NodePath("../../RayCastLeft")
-raycast_right = NodePath("../../RayCastRight")
 
-[node name="Float" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+[node name="Float" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
 script = ExtResource("8_pbvb0")
 character_body = NodePath("../..")
 animation_player = NodePath("../../AnimatedSprite2D")
-raycast_left = NodePath("../../RayCastLeft")
-raycast_right = NodePath("../../RayCastRight")
 
-[node name="Wall" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+[node name="Wall" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
 script = ExtResource("9_r4yyg")
 character_body = NodePath("../..")
 animation_player = NodePath("../../AnimatedSprite2D")
-raycast_left = NodePath("../../RayCastLeft")
-raycast_right = NodePath("../../RayCastRight")
 
-[node name="WallJump" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player", "raycast_left", "raycast_right")]
+[node name="WallJump" type="Node" parent="State Machine" node_paths=PackedStringArray("character_body", "animation_player")]
 script = ExtResource("10_1kjq5")
 character_body = NodePath("../..")
 animation_player = NodePath("../../AnimatedSprite2D")
-raycast_left = NodePath("../../RayCastLeft")
-raycast_right = NodePath("../../RayCastRight")

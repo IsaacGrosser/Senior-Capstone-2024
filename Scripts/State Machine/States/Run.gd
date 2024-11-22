@@ -4,16 +4,14 @@ class_name Run
 @export var character_body : CharacterBody2D
 @export var animation_player : AnimatedSprite2D
 
-var move_direction : Vector2
-
 ## SPEED / MOVEMENT VARIABLES 
-@export var max_speed : int = 90
+@export var max_speed : int = 100
 @export var acceleration : int = 12
 
 # Called when the node enters the scene tree for the first time.
 func Enter():
 	state_name = "Run"
-	print("ENTERED RUN STATE")
+	print("entered RUN state")
 	print("My previous state is " + previous_state)
 	if animation_player:
 		animation_player.play("running")
@@ -50,8 +48,4 @@ func handle_transitions():
 			Transitioned.emit(self, "Idle")
 		if (character_body && character_body.velocity.y >= 1) or !character_body.is_on_floor():
 			Transitioned.emit(self, "CoyoteTime")
-
-
-
-
 

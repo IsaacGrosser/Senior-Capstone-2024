@@ -3,11 +3,9 @@ class_name Jump
 
 @export var character_body : CharacterBody2D
 @export var animation_player : AnimatedSprite2D
-@export var raycast_left : RayCast2D
-@export var raycast_right : RayCast2D
 
 ## JUMP VARIABLES
-@export var jump_velocity : int = 275
+@export var jump_velocity : int = 285
 
 ## AIR MOVE SPEED VARIABLES
 @export var air_horizontal_acceleration : int = 10
@@ -15,7 +13,7 @@ class_name Jump
 
 func Enter():
 	state_name = "Jump"
-	print("ENTERED JUMP STATE")
+	print("entered JUMP state")
 	if animation_player:
 		animation_player.play("jumping")
 	if (character_body && character_body.is_on_floor()) or character_body && previous_state == "CoyoteTime":
@@ -45,9 +43,7 @@ func Physics_Update(delta: float):
 
 func handle_transitions():
 	# TRANSITIONS
-	if character_body.velocity.y >= 0:
-		Transitioned.emit(self, "Fall")
-	if Input.is_action_just_released("jump"):
+	if character_body.velocity.y >= 0 or Input.is_action_just_released("jump"):
 		Transitioned.emit(self, "Fall")
 	if Input.is_action_pressed("jump") && character_body.velocity.y >= 0:
 		Transitioned.emit(self, "Float")
