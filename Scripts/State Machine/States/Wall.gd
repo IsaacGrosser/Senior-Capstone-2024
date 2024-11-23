@@ -15,10 +15,10 @@ func Enter():
 func Exit():
 	pass
 
-func Update(delta: float):
+func Update(_delta: float):
 	pass
 
-func Physics_Update(delta: float):
+func Physics_Update(_delta: float):
 	if character_body:
 		character_body.velocity.y = wall_friction
 	

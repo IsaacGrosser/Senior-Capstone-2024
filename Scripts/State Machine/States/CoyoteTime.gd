@@ -21,10 +21,10 @@ func Enter():
 func Exit():
 	pass
 
-func Update(delta: float):
+func Update(_delta: float):
 	pass
 
-func Physics_Update(delta: float):
+func Physics_Update(_delta: float):
 	if coyote_counter > 0:
 		coyote_counter -= 1
 	if Input.is_action_pressed("move_right"):

@@ -21,10 +21,10 @@ func Enter():
 func Exit():
 	pass
 
-func Update(delta: float):
+func Update(_delta: float):
 	pass
 
-func Physics_Update(delta: float):
+func Physics_Update(_delta: float):
 	if Input.is_action_pressed("move_right"):
 		animation_player.flip_h = false
 		character_body.velocity.x += air_horizontal_acceleration * 2 # multiply to exponentially increase acc

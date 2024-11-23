@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjcf7lay07jrj"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_q7bgq"]
-[ext_resource type="TileSet" uid="uid://dl6nvjkfk0g6l" path="res://Scenes/TileSets/default-tile-set.tres" id="2_rbiiv"]
 [ext_resource type="PackedScene" uid="uid://nwydip70qfkn" path="res://Scenes/Player/player_fsm.tscn" id="3_2ud8q"]
 [ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="5_qhoeg"]
 [ext_resource type="PackedScene" uid="uid://c0p4a1jf42bke" path="res://Scenes/gatewayRight.tscn" id="6_bwqgq"]
+[ext_resource type="TileSet" uid="uid://cxpkw8jnxxikm" path="res://Scenes/TileSets/grass_cave_tree_tileset.tres" id="7_mfynb"]
 [ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="7_s488a"]
 
 [node name="level_template" type="Node2D" groups=["level"]]
@@ -12,9 +12,9 @@ script = ExtResource("1_q7bgq")
 level_name = "level_template"
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("2_rbiiv")
+tile_set = ExtResource("7_mfynb")
 format = 2
-layer_0/tile_data = PackedInt32Array(2, 65537, 5)
+layer_0/tile_data = PackedInt32Array(2, 917504, 3)
 
 [node name="Player-FSM" parent="." instance=ExtResource("3_2ud8q")]
 position = Vector2(40, 0)

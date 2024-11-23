@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx6rixu30q0pu"]
+[gd_scene load_steps=5 format=3 uid="uid://bx6rixu30q0pu"]
 
 [ext_resource type="Texture2D" uid="uid://ditke762qoxyh" path="res://Assets/Background/Forest-background-3.0.png" id="1_clv7w"]
+[ext_resource type="Texture2D" uid="uid://d0dey355edflu" path="res://Assets/Background/Forest-Background-NoLeafColor-SolidGrassColor.png" id="2_3jkec"]
 [ext_resource type="Texture2D" uid="uid://oj2vifwvtymd" path="res://Assets/Background/background-284by216.png" id="2_3ol2y"]
 [ext_resource type="Texture2D" uid="uid://c5sgftn4t2aii" path="res://Assets/Background/Forest-background-NoLeafColor.png" id="3_okg2v"]
 
@@ -29,16 +30,16 @@ motion_scale = Vector2(0.77, 1)
 motion_mirroring = Vector2(768, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Back Grass"]
-position = Vector2(192, -108)
-texture = ExtResource("2_3ol2y")
+position = Vector2(192, -324)
+texture = ExtResource("2_3jkec")
 region_enabled = true
-region_rect = Rect2(0, 216, 384, 216)
+region_rect = Rect2(0, 1296, 384, 648)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Back Grass"]
-position = Vector2(576, -108)
-texture = ExtResource("2_3ol2y")
+position = Vector2(576, -324)
+texture = ExtResource("2_3jkec")
 region_enabled = true
-region_rect = Rect2(0, 216, 384, 216)
+region_rect = Rect2(0, 1296, 384, 648)
 
 [node name="Back Trees" type="ParallaxLayer" parent="."]
 modulate = Color(0.76, 0.608, 0.76, 1)
@@ -95,29 +96,31 @@ region_rect = Rect2(0, 3240, 384, 648)
 motion_mirroring = Vector2(768, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Front Grass"]
-position = Vector2(192, -108)
-texture = ExtResource("2_3ol2y")
+modulate = Color(0.762404, 0.762404, 0.762404, 1)
+position = Vector2(192, -324)
+texture = ExtResource("2_3jkec")
 region_enabled = true
-region_rect = Rect2(0, 1080, 384, 216)
+region_rect = Rect2(0, 3888, 384, 648)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Front Grass"]
-position = Vector2(576, -108)
-texture = ExtResource("2_3ol2y")
+modulate = Color(0.760784, 0.760784, 0.760784, 1)
+position = Vector2(576, -324)
+texture = ExtResource("2_3jkec")
 region_enabled = true
-region_rect = Rect2(0, 1080, 384, 216)
+region_rect = Rect2(0, 3888, 384, 648)
 
 [node name="Bottom Grass Panel" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(768, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bottom Grass Panel"]
-modulate = Color(0, 0.498039, 0.486275, 1)
+modulate = Color(0.0649561, 0.364806, 0.360809, 1)
 position = Vector2(192, 108)
 texture = ExtResource("2_3ol2y")
 region_enabled = true
 region_rect = Rect2(0, 0, 384, 216)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Bottom Grass Panel"]
-modulate = Color(0, 0.498039, 0.486275, 1)
+modulate = Color(0.0666667, 0.364706, 0.360784, 1)
 position = Vector2(576, 108)
 texture = ExtResource("2_3ol2y")
 region_enabled = true

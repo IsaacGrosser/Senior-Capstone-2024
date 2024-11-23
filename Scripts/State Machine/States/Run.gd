@@ -13,14 +13,18 @@ func Enter():
 	print("entered RUN state")
 	if animation_player:
 		animation_player.play("running")
+		
+		# Added to check if it came from a falling state, then applies 'squash' for landing 
+		if previous_state == "Fall":
+			animation_player.scale = Vector2(1.3, 0.7)
 
 func Exit():
 	pass
 
-func Update(delta: float):
+func Update(_delta: float):
 	pass
 
-func Physics_Update(delta: float):
+func Physics_Update(_delta: float):
 	if character_body:
 		if Input.is_action_pressed("move_right") && !Input.is_action_pressed("move_left") && character_body.is_on_floor():
 			animation_player.flip_h = false

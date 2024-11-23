@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+@export var animation_player : AnimatedSprite2D
+
 ## GRAVITY VARIABLES
 @export var gravity_clamp : float = 250 # MAX GRAVITY
 @export var base_gravity : float = 12 
@@ -18,11 +20,15 @@ var jump_buffer_active : bool = false
 func _ready():
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	gravity()
 	check_jump_buffer()
 	check_coyote_timer()
 	move_and_slide()
+	
+	# Added to return player to normal scale when outside of jump
+	animation_player.scale.x = move_toward(animation_player.scale.x, 1, .1)
+	animation_player.scale.y = move_toward(animation_player.scale.y, 1, .1)
 
 ## GRAVITY MECHANIC
 func gravity():

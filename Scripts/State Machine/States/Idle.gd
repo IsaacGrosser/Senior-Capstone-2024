@@ -8,14 +8,18 @@ func Enter():
 	print("entered IDLE state")
 	if animation_player:
 		animation_player.play("idle")
+		
+		# Added to check if it came from a falling state, then applies 'squash' for landing 
+		if previous_state == "Fall":
+			animation_player.scale = Vector2(1.5, 0.5)
 
 func Exit():
 	pass
 
-func Update(delta : float):
+func Update(_delta : float):
 	pass
 
-func Physics_Update(delta : float):
+func Physics_Update(_delta : float):
 	# if State belongs to character body, set character body's velocity to slow to a stop
 	if character_body:
 		character_body.velocity.x = lerp(character_body.velocity.x, 0.0, 0.3)

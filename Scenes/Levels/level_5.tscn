@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4jbhv5heda40"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_1ewq4"]
+[ext_resource type="PackedScene" uid="uid://nwydip70qfkn" path="res://Scenes/Player/player_fsm.tscn" id="3_nmjqn"]
+[ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="4_vheju"]
+[ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="5_3snn4"]
+[ext_resource type="PackedScene" uid="uid://c0p4a1jf42bke" path="res://Scenes/gatewayRight.tscn" id="6_6mxnw"]
+[ext_resource type="TileSet" uid="uid://cxpkw8jnxxikm" path="res://Scenes/TileSets/grass_cave_tree_tileset.tres" id="7_pqa8u"]
+
+[node name="level_template" type="Node2D" groups=["level"]]
+script = ExtResource("1_1ewq4")
+level_name = "level_template"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("7_pqa8u")
+format = 2
+layer_0/tile_data = PackedInt32Array(2, 131072, 1, 1, 131072, 1, 0, 65536, 1, 3, 131072, 1, 4, 196608, 1, 65540, 196608, 2, 131076, 196608, 3, 131075, 131072, 3, 131074, 131072, 3, 131073, 131072, 3, 131072, 65536, 3, 65536, 65536, 2, 65537, 131072, 2, 65538, 131072, 2, 65539, 131072, 2)
+
+[node name="Player-FSM" parent="." instance=ExtResource("3_nmjqn")]
+position = Vector2(40, 0)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_vheju")]
+scroll_offset = Vector2(240, 880)
+
+[node name="Killzone" parent="." instance=ExtResource("5_3snn4")]
+position = Vector2(0, 66)
+
+[node name="Gateway" parent="." instance=ExtResource("6_6mxnw")]
+position = Vector2(133, 0)
