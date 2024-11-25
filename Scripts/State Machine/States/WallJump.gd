@@ -4,9 +4,8 @@ class_name WallJump extends State
 @export var animation_player : AnimatedSprite2D
 
 ## WALL JUMP VARIABLES / FRICTION VARIABLES
-@export var walljump_velocity : int = 250
+@export var walljump_velocity : int = 275
 @export var walljump_speed : int = 70
-@export var wall_friction : int = 60
 
 func Enter():
 	state_name = "WallJump"

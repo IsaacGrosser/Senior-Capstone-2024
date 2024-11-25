@@ -44,7 +44,7 @@ func handle_transitions():
 	if character_body:
 		if character_body.is_on_floor():
 			Transitioned.emit(self, "Idle")
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("jump") && Global.can_float:
 			Transitioned.emit(self, "Float")
 		
 	if character_body.is_on_wall_only() && (Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left")):

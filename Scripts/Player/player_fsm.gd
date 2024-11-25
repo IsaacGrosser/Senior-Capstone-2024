@@ -3,9 +3,10 @@ class_name Player extends CharacterBody2D
 @export var animation_player : AnimatedSprite2D
 
 ## GRAVITY VARIABLES
-@export var gravity_clamp : float = 250 # MAX GRAVITY
+@export var gravity_clamp : float = 225# MAX GRAVITY
 @export var base_gravity : float = 12 
 @export var gravity_mod : float = 0.5 # THIS IS FOR FALLING GRAVITY AMP
+@export var jump_gravity_threshold : float = 2.0 # THIS IS FOR ENTERING/EXITING HANG TIME STATE
 
 ## COYOTE VARIABLES 
 @export var coyote_buffer_length : int = 11

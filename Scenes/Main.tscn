@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtn3vgvs2e6vj"]
+[gd_scene load_steps=10 format=3 uid="uid://dtn3vgvs2e6vj"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ehfyu"]
 [ext_resource type="PackedScene" uid="uid://bmpby3r3ai8e7" path="res://Scenes/Levels/level_1.tscn" id="2_nqe3p"]
 [ext_resource type="Texture2D" uid="uid://ywkigh3fcai8" path="res://Assets/Honeycomb-Sprite.png" id="2_xrxs8"]
+[ext_resource type="PackedScene" uid="uid://dd6rph7pq2i3d" path="res://Scenes/UI/pause_menu.tscn" id="3_e3c8w"]
 [ext_resource type="AudioStream" uid="uid://c6u7xrsd8o4q5" path="res://Assets/Sounds/Music/echoes-of-erin-GNOME-ST.mp3" id="4_qcir6"]
+[ext_resource type="AudioStream" uid="uid://b41gkhigevbdk" path="res://Assets/Sounds/Sound Effects/pick-92276.mp3" id="5_qny25"]
 
 [sub_resource type="Animation" id="Animation_of1ql"]
 resource_name = "fade_in"
@@ -88,9 +90,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Honeycomb: 0"
 
+[node name="Pause Menu" parent="UI" instance=ExtResource("3_e3c8w")]
+
 [node name="Music Audio Player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_qcir6")
 bus = &"Music"
+
+[node name="Sound Effect Audio Player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qny25")
 
 [node name="Level Switch Timer" type="Timer" parent="."]
 wait_time = 0.5

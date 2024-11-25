@@ -4,7 +4,7 @@ class_name Wall extends State
 @export var animation_player : AnimatedSprite2D
 
 ## WALL FRICTION
-@export var wall_friction : int = 30
+@export var wall_friction : int = 15
 
 func Enter():
 	state_name = "Wall"

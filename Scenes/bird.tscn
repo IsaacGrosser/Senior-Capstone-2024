@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cxx00yc1f1c61"]
+[gd_scene load_steps=13 format=3 uid="uid://cxx00yc1f1c61"]
 
 [ext_resource type="Script" path="res://Scripts/fan.gd" id="1_tq541"]
 [ext_resource type="Texture2D" uid="uid://dbk7a2kgek5co" path="res://Assets/Robin with wind.png" id="2_2r36i"]
@@ -7,62 +7,68 @@
 radius = 6.0
 height = 98.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_udob0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f13be"]
 atlas = ExtResource("2_2r36i")
-region = Rect2(0, 0, 32, 16)
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kd6r5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlq4r"]
 atlas = ExtResource("2_2r36i")
-region = Rect2(32, 0, 32, 16)
+region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3vqjc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xti7m"]
 atlas = ExtResource("2_2r36i")
-region = Rect2(64, 0, 32, 16)
+region = Rect2(64, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7axqq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbax6"]
 atlas = ExtResource("2_2r36i")
-region = Rect2(96, 0, 32, 16)
+region = Rect2(96, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iu6fs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvrkm"]
 atlas = ExtResource("2_2r36i")
-region = Rect2(128, 0, 32, 16)
+region = Rect2(128, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ig5a2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h7ax"]
 atlas = ExtResource("2_2r36i")
-region = Rect2(160, 0, 32, 16)
+region = Rect2(160, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbben"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyxnp"]
 atlas = ExtResource("2_2r36i")
-region = Rect2(192, 0, 32, 16)
+region = Rect2(192, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_so06e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_udob0")
+"texture": SubResource("AtlasTexture_f13be")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kd6r5")
+"texture": SubResource("AtlasTexture_rlq4r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3vqjc")
+"texture": SubResource("AtlasTexture_xti7m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7axqq")
+"texture": SubResource("AtlasTexture_wbax6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iu6fs")
+"texture": SubResource("AtlasTexture_cvrkm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ig5a2")
+"texture": SubResource("AtlasTexture_1h7ax")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pbben")
+"texture": SubResource("AtlasTexture_pyxnp")
 }],
 "loop": true,
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1sd2t"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector3(0, -98, 0)
 
 [node name="Fan (wind blower ?)" type="Node2D"]
 position = Vector2(0, -8)
@@ -75,11 +81,16 @@ position = Vector2(0, -51)
 shape = SubResource("CapsuleShape2D_58hst")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -8)
 rotation = -1.56959
 sprite_frames = SubResource("SpriteFrames_so06e")
 autoplay = "default"
-frame_progress = 0.139824
+frame = 5
+frame_progress = 0.00928685
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -9)
+process_material = SubResource("ParticleProcessMaterial_1sd2t")
+lifetime = 1.3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

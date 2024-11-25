@@ -1,11 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjndphxqalob2"]
+[gd_scene load_steps=11 format=3 uid="uid://dd6rph7pq2i3d"]
 
-[ext_resource type="Script" path="res://Scripts/UI-Scripts/options_menu.gd" id="1_8xm5m"]
-[ext_resource type="Texture2D" uid="uid://ywkigh3fcai8" path="res://Assets/Honeycomb-Sprite.png" id="2_76f4b"]
-[ext_resource type="StyleBox" uid="uid://b7xahi7kdsa3w" path="res://Assets/Button Style Boxes/button_normal_style.tres" id="3_y5mio"]
-[ext_resource type="StyleBox" uid="uid://p2bpv347bfhx" path="res://Assets/Button Style Boxes/button_hover_style.tres" id="4_noj70"]
-[ext_resource type="StyleBox" uid="uid://71tdlgwq8do0" path="res://Assets/Button Style Boxes/button_pressed_style.tres" id="5_pr465"]
-[ext_resource type="StyleBox" uid="uid://ddgnumxs1jjum" path="res://Assets/Button Style Boxes/button_focused_style_(empty).tres" id="6_346xf"]
+[ext_resource type="Script" path="res://Scripts/UI-Scripts/pause_menu.gd" id="1_blwl6"]
+[ext_resource type="Shader" path="res://Assets/Shaders/pause_menu_shader.gdshader" id="2_08hs3"]
+[ext_resource type="Texture2D" uid="uid://ywkigh3fcai8" path="res://Assets/Honeycomb-Sprite.png" id="2_dwqya"]
+[ext_resource type="StyleBox" uid="uid://b7xahi7kdsa3w" path="res://Assets/Button Style Boxes/button_normal_style.tres" id="3_q0tht"]
+[ext_resource type="StyleBox" uid="uid://p2bpv347bfhx" path="res://Assets/Button Style Boxes/button_hover_style.tres" id="4_lwlln"]
+[ext_resource type="StyleBox" uid="uid://71tdlgwq8do0" path="res://Assets/Button Style Boxes/button_pressed_style.tres" id="5_26x0m"]
+[ext_resource type="StyleBox" uid="uid://ddgnumxs1jjum" path="res://Assets/Button Style Boxes/button_focused_style_(empty).tres" id="6_0fj1g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2wnok"]
+shader = ExtResource("2_08hs3")
+shader_parameter/amount = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xp7s"]
 bg_color = Color(1, 0.705882, 0, 1)
@@ -17,19 +22,39 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="Options Menu" type="Control"]
+[node name="Pause Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8xm5m")
+script = ExtResource("1_blwl6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1923.0
-offset_bottom = 1082.0
-color = Color(0.517115, 0.38968, 0.547802, 1)
+material = SubResource("ShaderMaterial_2wnok")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PauseLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -446.0
+offset_top = 140.0
+offset_right = 446.0
+offset_bottom = 508.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.176419, 0.176419, 0.176419, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 100
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -68,8 +93,8 @@ text = "master"
 
 [node name="master_slider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_icons/grabber = ExtResource("2_76f4b")
-theme_override_icons/grabber_highlight = ExtResource("2_76f4b")
+theme_override_icons/grabber = ExtResource("2_dwqya")
+theme_override_icons/grabber_highlight = ExtResource("2_dwqya")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6xp7s")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_f7i73")
 min_value = -80.0
@@ -86,8 +111,8 @@ text = "sound effects"
 
 [node name="sound_slider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_icons/grabber = ExtResource("2_76f4b")
-theme_override_icons/grabber_highlight = ExtResource("2_76f4b")
+theme_override_icons/grabber = ExtResource("2_dwqya")
+theme_override_icons/grabber_highlight = ExtResource("2_dwqya")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6xp7s")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_f7i73")
 min_value = -80.0
@@ -104,8 +129,8 @@ text = "music"
 
 [node name="music_slider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_icons/grabber = ExtResource("2_76f4b")
-theme_override_icons/grabber_highlight = ExtResource("2_76f4b")
+theme_override_icons/grabber = ExtResource("2_dwqya")
+theme_override_icons/grabber_highlight = ExtResource("2_dwqya")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6xp7s")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_f7i73")
 min_value = -80.0
@@ -119,31 +144,22 @@ theme_override_constants/margin_top = 20
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("3_y5mio")
-theme_override_styles/hover = ExtResource("4_noj70")
-theme_override_styles/pressed = ExtResource("5_pr465")
-theme_override_styles/focus = ExtResource("6_346xf")
+theme_override_styles/normal = ExtResource("3_q0tht")
+theme_override_styles/hover = ExtResource("4_lwlln")
+theme_override_styles/pressed = ExtResource("5_26x0m")
+theme_override_styles/focus = ExtResource("6_0fj1g")
 text = "Back
 "
 
-[node name="OptionsLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -446.0
-offset_top = 140.0
-offset_right = 446.0
-offset_bottom = 508.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.176419, 0.176419, 0.176419, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_font_sizes/font_size = 100
-text = "Options"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_q0tht")
+theme_override_styles/hover = ExtResource("4_lwlln")
+theme_override_styles/pressed = ExtResource("5_26x0m")
+theme_override_styles/focus = ExtResource("6_0fj1g")
+text = "Quit"
 
 [connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
@@ -153,3 +169,4 @@ vertical_alignment = 1
 [connection signal="value_changed" from="VBoxContainer/music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/music_slider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

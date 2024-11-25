@@ -1,33 +1,185 @@
-[gd_scene load_steps=8 format=3 uid="uid://g6wfsuk1lils"]
+[gd_scene load_steps=34 format=3 uid="uid://g6wfsuk1lils"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Scripts/main_menu.gd" id="1_fer5l"]
+[ext_resource type="Texture2D" uid="uid://35j3auh5iexs" path="res://Assets/Background/HoneyImGnomeStartScreen.png" id="2_17heg"]
+[ext_resource type="StyleBox" uid="uid://b7xahi7kdsa3w" path="res://Assets/Button Style Boxes/button_normal_style.tres" id="2_vr0pn"]
+[ext_resource type="StyleBox" uid="uid://p2bpv347bfhx" path="res://Assets/Button Style Boxes/button_hover_style.tres" id="3_qgfli"]
+[ext_resource type="StyleBox" uid="uid://71tdlgwq8do0" path="res://Assets/Button Style Boxes/button_pressed_style.tres" id="4_0o426"]
+[ext_resource type="StyleBox" uid="uid://ddgnumxs1jjum" path="res://Assets/Button Style Boxes/button_focused_style_(empty).tres" id="5_bau03"]
+[ext_resource type="Texture2D" uid="uid://bltei33p2wmux" path="res://Assets/Honeycomb-v1.png" id="6_36b0c"]
+[ext_resource type="AudioStream" uid="uid://b41gkhigevbdk" path="res://Assets/Sounds/Sound Effects/pick-92276.mp3" id="7_1id8k"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtwj1"]
-bg_color = Color(0.817521, 0.817521, 0.817521, 0.996078)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxami"]
+atlas = ExtResource("2_17heg")
+region = Rect2(0, 0, 256, 144)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqd43"]
-bg_color = Color(0.724643, 0.724643, 0.724642, 0.996078)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1yim"]
+atlas = ExtResource("2_17heg")
+region = Rect2(256, 0, 256, 144)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kb1r"]
-bg_color = Color(0.609331, 0.60933, 0.60933, 0.996078)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mia2"]
+atlas = ExtResource("2_17heg")
+region = Rect2(512, 0, 256, 144)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhlbj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f81g3"]
+atlas = ExtResource("2_17heg")
+region = Rect2(768, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeulv"]
+atlas = ExtResource("2_17heg")
+region = Rect2(1024, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tfyl"]
+atlas = ExtResource("2_17heg")
+region = Rect2(1280, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeb3c"]
+atlas = ExtResource("2_17heg")
+region = Rect2(1536, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdjmr"]
+atlas = ExtResource("2_17heg")
+region = Rect2(1792, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i3e1"]
+atlas = ExtResource("2_17heg")
+region = Rect2(2048, 0, 256, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_at6co"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxami")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1yim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mia2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f81g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eeulv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tfyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeb3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdjmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i3e1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0eek3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihvpd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0574"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(16, 12, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlvi4"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(80, 12, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev7hl"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(144, 12, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0r36"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(208, 12, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bitnw"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(272, 12, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmewg"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(336, 12, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih6w3"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(48, 13, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4wy3"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(112, 13, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vxrb"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(176, 13, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmpwr"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(240, 13, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ktri"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(304, 13, 16, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0l3i"]
+atlas = ExtResource("6_36b0c")
+region = Rect2(368, 13, 16, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eogcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0574")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlvi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev7hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0r36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bitnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmewg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih6w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4wy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vxrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmpwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ktri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0l3i")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 7.0
+}]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -38,6 +190,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fer5l")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1923.0
+offset_bottom = 1082.0
+color = Color(0.265933, 0.48747, 0.482239, 1)
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(7.5, 7.5)
+sprite_frames = SubResource("SpriteFrames_at6co")
+autoplay = "default"
+frame_progress = 0.74894
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -45,31 +210,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = 35.0
-offset_right = 146.0
-offset_bottom = 284.0
+offset_left = 146.0
+offset_top = 62.0
+offset_right = 438.0
+offset_bottom = 311.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
 theme_override_constants/separation = 10
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_vtwj1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vqd43")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kb1r")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qhlbj")
+theme_override_styles/normal = ExtResource("2_vr0pn")
+theme_override_styles/hover = ExtResource("3_qgfli")
+theme_override_styles/pressed = ExtResource("4_0o426")
+theme_override_styles/focus = ExtResource("5_bau03")
 text = "Start"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_vtwj1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vqd43")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kb1r")
+theme_override_styles/normal = ExtResource("2_vr0pn")
+theme_override_styles/hover = ExtResource("3_qgfli")
+theme_override_styles/pressed = ExtResource("4_0o426")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0eek3")
 text = "Options"
 
@@ -77,9 +243,9 @@ text = "Options"
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_vtwj1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vqd43")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3kb1r")
+theme_override_styles/normal = ExtResource("2_vr0pn")
+theme_override_styles/hover = ExtResource("3_qgfli")
+theme_override_styles/pressed = ExtResource("4_0o426")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ihvpd")
 text = "Quit"
 
@@ -88,20 +254,33 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -446.0
-offset_top = 140.0
-offset_right = 446.0
-offset_bottom = 508.0
+offset_left = -316.0
+offset_top = 53.0
+offset_right = 576.0
+offset_bottom = 421.0
 grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
 theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.176419, 0.176419, 0.176419, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 90
 text = "Honey, 
 I'm Gnome"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1791, 211)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_eogcr")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.267141
+flip_h = true
+
+[node name="Sound Effect Audio Player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_1id8k")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

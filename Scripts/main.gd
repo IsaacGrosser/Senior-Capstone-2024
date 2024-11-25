@@ -4,16 +4,24 @@ extends Node
 @onready var animation = $AnimationPlayer
 @onready var label = $UI/PanelContainer/MarginContainer/GridContainer/Label
 @onready var music_audio = $"Music Audio Player"
+@onready var pause_menu = $"UI/Pause Menu"
+@onready var sound_effect_audio = $"Sound Effect Audio Player"
 
 var next_level = null
 var current_level_name = null
+var paused
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_level.connect("level_changed", handle_level_changed)
+	# pause_menu.connect("unpause", handle_pause_menu())
+	pause_menu.hide()
 	music_audio.play()
 
 func _process(_delta):
 	label.text = "Honeycomb: " + str(Global.score)
+	if Input.is_action_just_pressed("pause"):
+		handle_pause_menu()
 
 func handle_level_changed(current_level_name: String):
 	var next_level_name : String
@@ -53,3 +61,21 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _on_music_audio_player_finished():
 	music_audio.play()
+
+func handle_pause_menu():
+	if paused:
+		Global.can_move = true
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		Global.can_move = false
+		pause_menu.show()
+		Engine.time_scale = 0
+	
+	paused = !paused
+
+func on_button_pressed():
+	sound_effect_audio.play()
+
+
+

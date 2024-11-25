@@ -1,26 +1,24 @@
-class_name Jump extends State
+class_name JumpHangTime extends State
 
 @export var character_body : CharacterBody2D
 @export var animation_player : AnimatedSprite2D
 
+## GRAVITY MOD VARIABLES for hang time
+@export var hangtime_gravity_mod : float = 0.2
 @export var gravity_threshold : float = 2.0
-
-## JUMP VARIABLES
-@export var jump_velocity : int = 285
 
 ## AIR MOVE SPEED VARIABLES
 @export var air_horizontal_acceleration : int = 10
 @export var max_horizontal_speed : int = 90
 
+@export var short_jump_threshold : int = 250
+@export var jump_end_early_gravity_mod : int = 10
+
 func Enter():
-	state_name = "Jump"
-	print("entered JUMP state")
-	if animation_player:
-		animation_player.play("jumping")
-		# Adds squish for jumping
-		animation_player.scale = Vector2(0.5, 1.6)
-	if (character_body && character_body.is_on_floor()) or character_body && previous_state == "CoyoteTime":
-		character_body.velocity.y =  -jump_velocity
+	state_name = "JumpHangTime"
+	print("entered JUMP HANG TIME state")
+	if character_body && character_body.velocity.y >= -short_jump_threshold && previous_state == "Jump":
+		character_body.velocity.y = jump_end_early_gravity_mod
 
 func Exit():
 	pass
@@ -29,6 +27,10 @@ func Update(_delta: float):
 	pass
 
 func Physics_Update(_delta: float):
+	# halves gravity on player while between a certain velocity in the air
+	if character_body:
+		character_body.velocity.y = character_body.base_gravity * hangtime_gravity_mod
+	
 	if Input.is_action_pressed("move_right"):
 		animation_player.flip_h = false
 		character_body.velocity.x += air_horizontal_acceleration * 2 # multiply to exponentially increase acc
@@ -45,14 +47,12 @@ func Physics_Update(_delta: float):
 	handle_transitions()
 
 func handle_transitions():
-	# TRANSITIONS
-	#if character_body.velocity.y >= 0 or Input.is_action_just_released("jump"):
-		#Transitioned.emit(self, "Fall")
-	if character_body && character_body.velocity.y >= -gravity_threshold or Input.is_action_just_released("jump"):
-		Transitioned.emit(self, "JumpHangTime")
-	if Input.is_action_pressed("jump") && character_body.velocity.y >= 0:
-		Transitioned.emit(self, "Float")
+	if character_body && character_body.velocity.y >= gravity_threshold:
+		Transitioned.emit(self, "Fall")
+	if character_body && character_body.velocity.y < gravity_threshold && character_body.is_on_wall_only() && (Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left")):
+		Transitioned.emit(self, "Wall")
+	if character_body.is_on_floor():
+		Transitioned.emit(self, "Idle")
 	if !Global.can_move:
 		Transitioned.emit(self, "Locked")
-
 

@@ -11,7 +11,7 @@ func Enter():
 		
 		# Added to check if it came from a falling state, then applies 'squash' for landing 
 		if previous_state == "Fall":
-			animation_player.scale = Vector2(1.5, 0.5)
+			animation_player.scale = Vector2(1.3, 0.5)
 
 func Exit():
 	pass
