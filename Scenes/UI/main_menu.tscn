@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://g6wfsuk1lils"]
+[gd_scene load_steps=35 format=3 uid="uid://g6wfsuk1lils"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Scripts/main_menu.gd" id="1_fer5l"]
 [ext_resource type="Texture2D" uid="uid://35j3auh5iexs" path="res://Assets/Background/HoneyImGnomeStartScreen.png" id="2_17heg"]
@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://ddgnumxs1jjum" path="res://Assets/Button Style Boxes/button_focused_style_(empty).tres" id="5_bau03"]
 [ext_resource type="Texture2D" uid="uid://bltei33p2wmux" path="res://Assets/Honeycomb-v1.png" id="6_36b0c"]
 [ext_resource type="AudioStream" uid="uid://b41gkhigevbdk" path="res://Assets/Sounds/Sound Effects/pick-92276.mp3" id="7_1id8k"]
+[ext_resource type="FontFile" uid="uid://cjaalw0cyveaj" path="res://Assets/Fonts/Halo Dek.ttf" id="7_hit6s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxami"]
 atlas = ExtResource("2_17heg")
@@ -254,17 +255,18 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -316.0
-offset_top = 53.0
-offset_right = 576.0
-offset_bottom = 421.0
+offset_left = -525.0
+offset_top = -56.0
+offset_right = 367.0
+offset_bottom = 312.0
 grow_horizontal = 2
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.176419, 0.176419, 0.176419, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("7_hit6s")
+theme_override_font_sizes/font_size = 110
 text = "Honey, 
 I'm Gnome"
 horizontal_alignment = 1

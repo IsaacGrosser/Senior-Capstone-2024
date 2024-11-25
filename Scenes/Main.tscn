@@ -109,7 +109,7 @@ libraries = {
 "": SubResource("AnimationLibrary_gdfuf")
 }
 
-[connection signal="finished" from="Music Audio Player" to="." method="_on_music_audio_player_finished"]
 [connection signal="finished" from="Music Audio Player" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="finished" from="Music Audio Player" to="." method="_on_music_audio_player_finished"]
 [connection signal="timeout" from="Level Switch Timer" to="Level 1" method="_on_level_switch_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
