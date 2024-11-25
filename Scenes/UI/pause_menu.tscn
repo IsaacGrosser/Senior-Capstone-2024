@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd6rph7pq2i3d"]
+[gd_scene load_steps=12 format=3 uid="uid://dd6rph7pq2i3d"]
 
 [ext_resource type="Script" path="res://Scripts/UI-Scripts/pause_menu.gd" id="1_blwl6"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu_shader.gdshader" id="2_08hs3"]
 [ext_resource type="Texture2D" uid="uid://ywkigh3fcai8" path="res://Assets/Honeycomb-Sprite.png" id="2_dwqya"]
+[ext_resource type="FontFile" uid="uid://cjaalw0cyveaj" path="res://Assets/Fonts/Halo Dek.ttf" id="3_a64fw"]
 [ext_resource type="StyleBox" uid="uid://b7xahi7kdsa3w" path="res://Assets/Button Style Boxes/button_normal_style.tres" id="3_q0tht"]
 [ext_resource type="StyleBox" uid="uid://p2bpv347bfhx" path="res://Assets/Button Style Boxes/button_hover_style.tres" id="4_lwlln"]
 [ext_resource type="StyleBox" uid="uid://71tdlgwq8do0" path="res://Assets/Button Style Boxes/button_pressed_style.tres" id="5_26x0m"]
@@ -42,15 +43,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -446.0
-offset_top = 140.0
-offset_right = 446.0
-offset_bottom = 508.0
+offset_left = -578.0
+offset_top = 87.0
+offset_right = 314.0
+offset_bottom = 455.0
 grow_horizontal = 2
+scale = Vector2(1.3, 1.3)
 theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.176419, 0.176419, 0.176419, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("3_a64fw")
 theme_override_font_sizes/font_size = 100
 text = "Paused"
 horizontal_alignment = 1
@@ -166,7 +169,7 @@ text = "Quit"
 [connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_sound_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/sound_slider" to="." method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/sound_slider" to="." method="_on_sound_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/music_slider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
