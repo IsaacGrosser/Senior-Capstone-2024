@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://cibtabwud6316"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_pd52k"]
+[ext_resource type="TileSet" uid="uid://cxpkw8jnxxikm" path="res://Scenes/TileSets/grass_cave_tree_tileset.tres" id="2_yeciw"]
+[ext_resource type="PackedScene" uid="uid://nwydip70qfkn" path="res://Scenes/Player/player_fsm.tscn" id="3_habbd"]
+[ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="4_2q6od"]
+[ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="5_jw5qk"]
+[ext_resource type="PackedScene" uid="uid://c0p4a1jf42bke" path="res://Scenes/gatewayRight.tscn" id="6_71gpu"]
+
+[node name="level_6" type="Node2D" groups=["level"]]
+script = ExtResource("1_pd52k")
+level_name = "level_6"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_yeciw")
+format = 2
+layer_0/tile_data = PackedInt32Array(2, 917504, 3)
+
+[node name="Player-FSM" parent="." instance=ExtResource("3_habbd")]
+position = Vector2(40, 0)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_2q6od")]
+scroll_offset = Vector2(240, 880)
+
+[node name="Killzone" parent="." instance=ExtResource("5_jw5qk")]
+position = Vector2(0, 66)
+
+[node name="Gateway" parent="." instance=ExtResource("6_71gpu")]
+position = Vector2(133, 0)

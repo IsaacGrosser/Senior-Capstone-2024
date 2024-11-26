@@ -1,0 +1,153 @@
+[gd_scene load_steps=16 format=3 uid="uid://bb5si0qobeqf7"]
+
+[ext_resource type="Texture2D" uid="uid://pmod34reofvo" path="res://Assets/honeyjar.png" id="1_kst1j"]
+[ext_resource type="Script" path="res://Scripts/honeyjar.gd" id="2_47fos"]
+[ext_resource type="FontFile" uid="uid://cjaalw0cyveaj" path="res://Assets/Fonts/Halo Dek.ttf" id="3_addam"]
+[ext_resource type="AudioStream" uid="uid://crpeuhct3daa0" path="res://Assets/Sounds/Sound Effects/festive-birthday-horn-250238.mp3" id="4_6rg87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhyv7"]
+atlas = ExtResource("1_kst1j")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5ejy"]
+atlas = ExtResource("1_kst1j")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3eh1"]
+atlas = ExtResource("1_kst1j")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1qhj"]
+atlas = ExtResource("1_kst1j")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrpoe"]
+atlas = ExtResource("1_kst1j")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_352q2"]
+atlas = ExtResource("1_kst1j")
+region = Rect2(160, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_172q6"]
+atlas = ExtResource("1_kst1j")
+region = Rect2(192, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js2k6"]
+atlas = ExtResource("1_kst1j")
+region = Rect2(224, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i08iv"]
+atlas = ExtResource("1_kst1j")
+region = Rect2(256, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_drdoo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhyv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5ejy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3eh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1qhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrpoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_352q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_172q6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js2k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i08iv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u8gf"]
+size = Vector2(86, 35)
+
+[node name="Honeyjar" type="AnimatedSprite2D"]
+modulate = Color(1, 1, 1, 0.901961)
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_drdoo")
+script = ExtResource("2_47fos")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4u8gf")
+
+[node name="Action Label" type="Label" parent="."]
+offset_left = -49.0
+offset_top = -23.0
+offset_right = 924.0
+offset_bottom = 46.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_addam")
+theme_override_font_sizes/font_size = 60
+text = "Press 'f' to fill the jar with honey!"
+horizontal_alignment = 1
+
+[node name="Directions Label" type="Label" parent="."]
+offset_left = -41.0
+offset_top = -58.0
+offset_right = 781.0
+offset_bottom = 239.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_addam")
+theme_override_font_sizes/font_size = 45
+text = "You first need to collect the honey!
+Head to the gate, climb the tree, 
+and get the honey!
+
+don't worry, keeping going forward
+and eventually you will be back!"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6rg87")
+
+[node name="Countdown Label" type="Label" parent="."]
+offset_left = -3.0
+offset_top = 3.0
+offset_right = 54.0
+offset_bottom = 105.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.905882, 0.639216, 0.00392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("3_addam")
+theme_override_font_sizes/font_size = 100
+text = "3"
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

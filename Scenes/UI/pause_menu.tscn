@@ -165,8 +165,8 @@ theme_override_styles/focus = ExtResource("6_0fj1g")
 text = "Quit"
 
 [connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/sound_slider" to="." method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/sound_slider" to="." method="_on_sound_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/music_slider" to="." method="_on_h_slider_value_changed"]

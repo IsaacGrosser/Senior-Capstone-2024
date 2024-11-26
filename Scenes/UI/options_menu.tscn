@@ -151,8 +151,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/sound_slider" to="." method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/sound_slider" to="." method="_on_sound_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/music_slider" to="." method="_on_h_slider_value_changed"]

@@ -4,7 +4,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jfdmc"]
 
-[node name="Killzone" type="Area2D"]
+[node name="Killzone" type="Area2D" groups=["deadly_objects"]]
 collision_mask = 2
 script = ExtResource("1_cq263")
 
