@@ -1,9 +1,11 @@
 extends Control
 
-@onready var start = $VBoxContainer/Start
-@onready var options = $VBoxContainer/Options
 @onready var quit = $VBoxContainer/Quit
 @onready var audio = $"Sound Effect Audio Player"
+@onready var play_again = $"VBoxContainer/Play Again"
+
+func _ready():
+	play_again.grab_focus()
 
 func _on_quit_pressed():
 	audio.play()

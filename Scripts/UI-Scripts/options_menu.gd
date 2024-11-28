@@ -1,6 +1,10 @@
 extends Control
 
 @onready var back = $VBoxContainer/Back
+@onready var master_slider = $VBoxContainer/master_slider
+
+func _ready():
+	master_slider.grab_focus()
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")

@@ -9,9 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://qjdd1s2e72da" path="res://Scenes/Deadly Objects/wood_spikes.tscn" id="8_dxb74"]
 [ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="8_jxejw"]
 
-[node name="level_3" type="Node2D" groups=["level"]]
+[node name="level_3" type="Node2D" node_paths=PackedStringArray("spawn_position") groups=["level"]]
 script = ExtResource("1_si2vr")
 level_name = "level_3"
+spawn_position = NodePath("Spawn Position")
+
+[node name="Spawn Position" type="Node2D" parent="."]
+position = Vector2(-4, -1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_u6k55")

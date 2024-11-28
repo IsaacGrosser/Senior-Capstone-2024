@@ -92,10 +92,14 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[node name="Level 1" type="Node2D" groups=["level"]]
+[node name="Level 1" type="Node2D" node_paths=PackedStringArray("spawn_position") groups=["level"]]
 self_modulate = Color(0.262745, 0.309804, 0.435294, 1)
 script = ExtResource("1_g824m")
 level_name = "level_1"
+spawn_position = NodePath("Spawn Position")
+
+[node name="Spawn Position" type="Node2D" parent="."]
+position = Vector2(154, -2)
 
 [node name="Mushroom House" type="AnimatedSprite2D" parent="."]
 position = Vector2(103, -46)

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqf6p"]
 size = Vector2(14, 14)
 
-[node name="Rock Spikes" type="Node2D"]
+[node name="Rock Spikes" type="Node2D" groups=["deadly_objects"]]
 script = ExtResource("1_sb1k3")
 
 [node name="Timer" type="Timer" parent="."]

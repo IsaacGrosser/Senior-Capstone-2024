@@ -1,23 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://cibtabwud6316"]
+[gd_scene load_steps=10 format=3 uid="uid://cibtabwud6316"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_pd52k"]
 [ext_resource type="TileSet" uid="uid://cxpkw8jnxxikm" path="res://Scenes/TileSets/grass_cave_tree_tileset.tres" id="2_yeciw"]
 [ext_resource type="PackedScene" uid="uid://nwydip70qfkn" path="res://Scenes/Player/player_fsm.tscn" id="3_habbd"]
 [ext_resource type="PackedScene" uid="uid://bx6rixu30q0pu" path="res://Scenes/Backgrounds/Forest-Background-V2.tscn" id="4_2q6od"]
 [ext_resource type="PackedScene" uid="uid://coa8taw4k5qte" path="res://Scenes/killzone.tscn" id="5_jw5qk"]
-[ext_resource type="PackedScene" uid="uid://c0p4a1jf42bke" path="res://Scenes/gatewayRight.tscn" id="6_71gpu"]
+[ext_resource type="PackedScene" uid="uid://dfcl6o8ln175g" path="res://Scenes/gatewayLeft.tscn" id="6_w6a3b"]
+[ext_resource type="PackedScene" uid="uid://cxx00yc1f1c61" path="res://Scenes/bird.tscn" id="7_ir8jq"]
+[ext_resource type="PackedScene" uid="uid://6t3s1rvsydqs" path="res://Scenes/Deadly Objects/thorns.tscn" id="8_8yaxc"]
+[ext_resource type="PackedScene" uid="uid://bin62ljx73ngp" path="res://Scenes/collectible.tscn" id="9_11dyf"]
 
-[node name="level_6" type="Node2D" groups=["level"]]
+[node name="level_6" type="Node2D" node_paths=PackedStringArray("spawn_position") groups=["level"]]
 script = ExtResource("1_pd52k")
 level_name = "level_6"
+spawn_position = NodePath("Spawn Position")
+
+[node name="Spawn Position" type="Node2D" parent="."]
+position = Vector2(922, 0)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_yeciw")
 format = 2
-layer_0/tile_data = PackedInt32Array(2, 917504, 3)
+layer_0/tile_data = PackedInt32Array(-393152, 786432, 1610612742, -458703, 786432, 1342177286, -393167, 786432, 1342177286, -327631, 786432, 1342177286, -262095, 786432, 1342177286, -196559, 786432, 1342177286, -131023, 786432, 1342177286, -65487, 983040, 6, -65486, 786432, 6, -65485, 786432, 6, -65484, 786432, 6, -65483, 786432, 6, -65482, 786432, 6, -65481, 983040, 5, -65477, 983040, 1610612741, -65476, 786432, 6, -65475, 786432, 6, -65474, 786432, 6, -65473, 786432, 6, -458688, 786432, 1610612742, -327616, 786432, 1610612742, -262080, 786432, 1610612742, -196544, 786432, 1610612742, -131008, 786432, 1610612742, -65472, 983040, 1610612742, -458699, 720896, 2, -458698, 786432, 2, -458697, 851968, 2, -655301, 720896, 2, -655300, 786432, 2, -655299, 851968, 2, -851915, 720896, 2, -851914, 851968, 2, -262094, 917504, 2, -262081, 917504, 2, -458691, 458752, 6, -393155, 458752, 6, -327619, 458752, 7, -524227, 458752, 6, -589763, 458752, 5, -524224, 786432, 1610612742, -589760, 786432, 1610612742, -655296, 786432, 1610612742, -720832, 786432, 1610612742, -786368, 786432, 1610612742, -851904, 786432, 1610612742, -917440, 786432, 1610612742, -982976, 786432, 1610612742, -1048512, 786432, 1610612742, -1114048, 983040, 805306374, -1114049, 786432, 805306374, -1114050, 851968, 805306374, -1114053, 720896, 805306374, -851906, 720896, 3, -851905, 786432, 3, -524239, 720896, 1342177286, -1048518, 786432, 1610612742, -982982, 786432, 1610612742, -917446, 786432, 1610612742, -851910, 786432, 1610612742, -786374, 786432, 1610612742, -720838, 786432, 1610612742, -655302, 786432, 1610612742, -589766, 786432, 1610612742, -524230, 786432, 1610612742, -458694, 786432, 1610612742, -393158, 458752, 805306373, -1114054, 983040, 1342177286, -1048516, 720896, 2, -1048515, 851968, 2, -524225, 917504, 2, 56, 786432, 6, 57, 786432, 6, 58, 786432, 6, 55, 983040, 6, 59, 983040, 1610612742, -851927, 786432, 6, -851926, 786432, 6, -851925, 786432, 6, -851924, 786432, 6, -851923, 786432, 6, -851922, 786432, 6, -851921, 786432, 6, -851920, 851968, 6, -1441752, 786432, 1342177286, -1376216, 786432, 1342177286, -1310680, 786432, 1342177286, -1245144, 786432, 1342177286, -1179608, 786432, 1342177286, -1114072, 786432, 1342177286, -1048536, 786432, 1342177286, -1245135, 786432, 1610612742, -1310671, 786432, 1610612742, -1376207, 786432, 1610612742, -1441743, 786432, 1610612742, -1507279, 786432, 1610612742, -1572815, 786432, 1610612742, -1638351, 786432, 1610612742, -1703887, 786432, 1610612742, -1769423, 786432, 1610612742, -1834959, 786432, 1610612742, -1900495, 786432, 1610612742, -1966031, 786432, 1610612742, -2031567, 786432, 1610612742, -2097103, 786432, 1610612742, -2162639, 786432, 1610612742, -2228175, 786432, 1610612742, -2293711, 786432, 1610612742, -2359247, 786432, 1610612742, -2424783, 786432, 1610612742, -2490319, 786432, 1610612742, -1507288, 786432, 1342177286, -1572824, 786432, 1342177286, -1638360, 786432, 1342177286, -1703896, 786432, 1342177286, -1769432, 786432, 1342177286, -1834968, 786432, 1342177286, -1900504, 786432, 1342177286, -1966040, 786432, 1342177286, -2031576, 786432, 1342177286, -2097112, 786432, 1342177286, -2162648, 786432, 1342177286, -2228184, 786432, 1342177286, -2293720, 786432, 1342177286, -2359256, 786432, 1342177286, -2424792, 786432, 1342177286, -2490328, 786432, 1342177286, -1048537, 786432, 1610612742, -1114073, 786432, 1610612742, -1179609, 786432, 1610612742, -1245145, 786432, 1610612742, -1310681, 786432, 1610612742, -1376217, 786432, 1610612742, -1441753, 786432, 1610612742, -1507289, 786432, 1610612742, -1572825, 786432, 1610612742, -1638361, 786432, 1610612742, -1703897, 786432, 1610612742, -1769433, 786432, 1610612742, -1834969, 786432, 1610612742, -1900505, 786432, 1610612742, -1966041, 786432, 1610612742, -2031577, 786432, 1610612742, -2097113, 786432, 1610612742, -2162649, 786432, 1610612742, -2228185, 786432, 1610612742, -2293721, 786432, 1610612742, -2359257, 786432, 1610612742, -2424793, 786432, 1610612742, -2490329, 786432, 1610612742, -2490338, 786432, 1342177286, -2424802, 786432, 1342177286, -2359266, 786432, 1342177286, -2293730, 786432, 1342177286, -2228194, 786432, 1342177286, -2162658, 786432, 1342177286, -2097122, 786432, 1342177286, -2031586, 786432, 1342177286, -1966050, 786432, 1342177286, -1900514, 786432, 1342177286, -1834978, 786432, 1342177286, -1769442, 786432, 1342177286, -1703906, 786432, 1342177286, -1638370, 786432, 1342177286, -1572834, 786432, 1342177286, -1507298, 786432, 1342177286, -1441762, 786432, 1342177286, -1376226, 786432, 1342177286, -1310690, 786432, 1342177286, -917475, 786432, 6, -917474, 786432, 6, -917473, 786432, 6, -917472, 786432, 6, -983012, 786432, 6, -983013, 786432, 6, -1048550, 786432, 6, -1048551, 786432, 6, -1179624, 983040, 5, -1179625, 786432, 6, -1310698, 983040, 5, -1310699, 786432, 6, -1507308, 983040, 5, -1507309, 786432, 6, -1507310, 786432, 6, -1507311, 786432, 6, -917471, 786432, 6, -917470, 786432, 6, -917469, 786432, 6, -917468, 786432, 6, -917467, 786432, 6, -917466, 786432, 6, -917465, 983040, 1610612742, -917476, 983040, 6, -983014, 983040, 6, -1048552, 983040, 6, -1179626, 983040, 6, -1310700, 983040, 6, -1507312, 983040, 6, -1572848, 786432, 1342177286, -1638384, 786432, 1342177286, -1703920, 786432, 1342177286, -1769456, 786432, 1342177286, -1834992, 983040, 1342177286, -1834991, 786432, 805306374, -1834990, 786432, 805306374, -1834989, 786432, 805306374, -1834988, 786432, 805306374, -1834987, 720896, 805306374, -1441772, 786432, 1342177286, -1376236, 786432, 1342177286, -1245162, 786432, 1342177286, -1114088, 786432, 1342177286, -983011, 983040, 5, -1048549, 983040, 5, -1114087, 983040, 5, -1245161, 983040, 5, -1376235, 983040, 5, -1441773, 983040, 6, -1245154, 458752, 7, -2555874, 458752, 5, -2555864, 983040, 5, -2555865, 983040, 1610612741, -2555855, 458752, 805306375, -983001, 786432, 1610612742, -983000, 786432, 1342177286, -917464, 786432, 1342177286, -851928, 983040, 6, -1179599, 458752, 805306373, -2490332, 720896, 3, -2490331, 786432, 3, -2490330, 851968, 3)
 
 [node name="Player-FSM" parent="." instance=ExtResource("3_habbd")]
-position = Vector2(40, 0)
+position = Vector2(922, 0)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_2q6od")]
 scroll_offset = Vector2(240, 880)
@@ -25,5 +32,385 @@ scroll_offset = Vector2(240, 880)
 [node name="Killzone" parent="." instance=ExtResource("5_jw5qk")]
 position = Vector2(0, 66)
 
-[node name="Gateway" parent="." instance=ExtResource("6_71gpu")]
-position = Vector2(133, 0)
+[node name="Gateway" parent="." instance=ExtResource("6_w6a3b")]
+position = Vector2(287, -368)
+
+[node name="Birds" type="Node" parent="."]
+
+[node name="Fan (wind blower ?)" parent="Birds" instance=ExtResource("7_ir8jq")]
+position = Vector2(833, -46)
+
+[node name="Fan (wind blower ?)2" parent="Birds" instance=ExtResource("7_ir8jq")]
+position = Vector2(914, -139)
+
+[node name="Fan (wind blower ?)3" parent="Birds" instance=ExtResource("7_ir8jq")]
+position = Vector2(666, -228)
+
+[node name="Fan (wind blower ?)4" parent="Birds" instance=ExtResource("7_ir8jq")]
+position = Vector2(774, -279)
+
+[node name="Fan (wind blower ?)5" parent="Birds" instance=ExtResource("7_ir8jq")]
+position = Vector2(744, -356)
+
+[node name="Fan (wind blower ?)6" parent="Birds" instance=ExtResource("7_ir8jq")]
+position = Vector2(666, -357)
+
+[node name="Fan (wind blower ?)7" parent="Birds" instance=ExtResource("7_ir8jq")]
+position = Vector2(706, -437)
+
+[node name="Fan (wind blower ?)8" parent="Birds" instance=ExtResource("7_ir8jq")]
+position = Vector2(777, -497)
+
+[node name="Fan (wind blower ?)9" parent="Birds" instance=ExtResource("7_ir8jq")]
+position = Vector2(664, -544)
+
+[node name="Spikes" type="Node" parent="."]
+
+[node name="Thorns" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(797, -14)
+rotation = 0.785398
+
+[node name="Thorns2" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(1025, -15)
+rotation = -0.785398
+
+[node name="Thorns3" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(945, -96)
+rotation = -3.14159
+
+[node name="Thorns4" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(959, -96)
+rotation = -3.14159
+
+[node name="Thorns5" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(974, -96)
+rotation = -3.14159
+
+[node name="Thorns6" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(945, -129)
+
+[node name="Thorns7" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(959, -129)
+
+[node name="Thorns8" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(974, -129)
+
+[node name="Thorns9" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(825, -150)
+
+[node name="Thorns10" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(840, -150)
+
+[node name="Thorns11" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(906, -241)
+
+[node name="Thorns12" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(921, -241)
+
+[node name="Thorns15" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(664, -336)
+rotation = -0.610865
+
+[node name="Thorns16" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(678, -346)
+rotation = -0.610865
+
+[node name="Thorns42" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(746, -261)
+rotation = -0.523599
+
+[node name="Thorns43" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(761, -269)
+rotation = -0.523599
+
+[node name="Thorns44" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(716, -245)
+rotation = -0.523599
+
+[node name="Thorns46" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(701, -236)
+rotation = -0.523599
+
+[node name="Thorns45" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(731, -253)
+rotation = -0.523599
+
+[node name="Thorns17" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(764, -386)
+
+[node name="Thorns18" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(779, -386)
+
+[node name="Thorns19" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(735, -439)
+
+[node name="Thorns20" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(750, -439)
+
+[node name="Thorns21" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(720, -387)
+rotation = 1.5708
+
+[node name="Thorns22" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(720, -370)
+rotation = 1.5708
+
+[node name="Thorns35" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(676, -509)
+rotation = 1.5708
+
+[node name="Thorns36" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(676, -492)
+rotation = 1.5708
+
+[node name="Thorns37" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(682, -542)
+rotation = 2.35619
+
+[node name="Thorns38" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(676, -526)
+rotation = 1.5708
+
+[node name="Thorns23" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(691, -435)
+rotation = -1.5708
+
+[node name="Thorns24" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(691, -418)
+rotation = -1.5708
+
+[node name="Thorns25" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(735, -439)
+
+[node name="Thorns26" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(750, -439)
+
+[node name="Thorns29" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(662, -476)
+
+[node name="Thorns30" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(679, -480)
+rotation = -0.610865
+
+[node name="Thorns31" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(697, -538)
+
+[node name="Thorns32" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(712, -538)
+
+[node name="Thorns33" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(764, -605)
+
+[node name="Thorns34" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(779, -605)
+
+[node name="Thorns51" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(495, -532)
+rotation = 0.785398
+
+[node name="Thorns52" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(507, -520)
+rotation = 0.785398
+
+[node name="Thorns69" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(494, -411)
+rotation = 0.785398
+
+[node name="Thorns70" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(506, -399)
+rotation = 0.785398
+
+[node name="Thorns71" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(563, -376)
+rotation = -0.785398
+
+[node name="Thorns72" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(551, -364)
+rotation = -0.785398
+
+[node name="Thorns53" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(523, -511)
+
+[node name="Thorns54" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(531, -507)
+rotation = 0.785398
+
+[node name="Thorns55" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(548, -499)
+
+[node name="Thorns47" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(560, -586)
+
+[node name="Thorns48" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(575, -586)
+
+[node name="Thorns79" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(606, -379)
+
+[node name="Thorns80" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(621, -379)
+
+[node name="Thorns85" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(606, -277)
+
+[node name="Thorns86" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(621, -277)
+
+[node name="Thorns49" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(535, -583)
+rotation = -0.785398
+
+[node name="Thorns50" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(543, -586)
+
+[node name="Thorns76" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(553, -301)
+
+[node name="Thorns77" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(544, -299)
+rotation = -0.785398
+
+[node name="Thorns78" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(495, -299)
+rotation = 0.785398
+
+[node name="Thorns83" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(570, -348)
+rotation = 0.785398
+
+[node name="Thorns84" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(584, -337)
+rotation = 0.436332
+
+[node name="Thorns27" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(691, -435)
+rotation = -1.5708
+
+[node name="Thorns28" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(691, -418)
+rotation = -1.5708
+
+[node name="Thorns56" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(594, -506)
+rotation = -1.5708
+
+[node name="Thorns57" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(594, -489)
+rotation = -1.5708
+
+[node name="Thorns58" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(594, -472)
+rotation = -1.5708
+
+[node name="Thorns59" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(594, -455)
+rotation = -1.5708
+
+[node name="Thorns73" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(571, -427)
+rotation = -1.5708
+
+[node name="Thorns74" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(571, -410)
+rotation = -1.5708
+
+[node name="Thorns75" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(571, -393)
+rotation = -1.5708
+
+[node name="Thorns63" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(599, -506)
+rotation = 1.5708
+
+[node name="Thorns64" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(599, -489)
+rotation = 1.5708
+
+[node name="Thorns65" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(599, -472)
+rotation = 1.5708
+
+[node name="Thorns66" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(599, -455)
+rotation = 1.5708
+
+[node name="Thorns81" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(561, -381)
+rotation = 1.5708
+
+[node name="Thorns82" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(561, -364)
+rotation = 1.5708
+
+[node name="Thorns87" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(551, -293)
+rotation = 1.5708
+
+[node name="Thorns88" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(551, -276)
+rotation = 1.5708
+
+[node name="Thorns89" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(557, -260)
+rotation = 0.785398
+
+[node name="Thorns90" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(568, -249)
+rotation = 0.785398
+
+[node name="Thorns60" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(586, -436)
+
+[node name="Thorns68" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(595, -448)
+rotation = 2.35619
+
+[node name="Thorns62" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(569, -436)
+
+[node name="Thorns67" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(597, -505)
+
+[node name="Thorns61" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(561, -432)
+rotation = -0.785398
+
+[node name="Thorns39" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(768, -439)
+rotation = -1.5708
+
+[node name="Thorns40" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(768, -422)
+rotation = -1.5708
+
+[node name="Thorns41" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(768, -405)
+rotation = -1.5708
+
+[node name="Thorns13" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(821, -222)
+rotation = 0.785398
+
+[node name="Thorns14" parent="Spikes" instance=ExtResource("8_8yaxc")]
+position = Vector2(833, -210)
+rotation = 0.785398
+
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="Collectible" parent="Collectibles" instance=ExtResource("9_11dyf")]
+position = Vector2(1009, -223)
+
+[node name="Collectible2" parent="Collectibles" instance=ExtResource("9_11dyf")]
+position = Vector2(873, -127)
+
+[node name="Collectible3" parent="Collectibles" instance=ExtResource("9_11dyf")]
+position = Vector2(727, -218)
+
+[node name="Collectible4" parent="Collectibles" instance=ExtResource("9_11dyf")]
+position = Vector2(745, -510)
+
+[node name="Collectible5" parent="Collectibles" instance=ExtResource("9_11dyf")]
+position = Vector2(602, -625)
+
+[node name="Collectible6" parent="Collectibles" instance=ExtResource("9_11dyf")]
+position = Vector2(423, -269)

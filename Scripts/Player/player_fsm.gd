@@ -18,6 +18,8 @@ var coyote_counter : int = 0 # variable to hold current count state
 var jump_buffer_counter : int = 0 # variable to hold current count state
 var jump_buffer_active : bool = false
 
+## DEATH VARIABLES
+
 func _ready():
 	pass
 
@@ -56,4 +58,16 @@ func check_coyote_timer():
 	if coyote_counter <= 0:
 		coyote_counter = coyote_buffer_length
 
+func handle_player_death() -> void:
+	Global.can_move = false
+	print("Player has died")
+	await get_tree().create_timer(1).timeout
+	reset_player()
+
+func reset_player() -> void:
+	var level = get_tree().get_first_node_in_group("level")
+	var spawn_position = level.get_spawn_position()
+	self.rotation = 0
+	global_position = spawn_position
+	Global.can_move = true
 

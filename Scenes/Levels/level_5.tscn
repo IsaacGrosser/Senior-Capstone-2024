@@ -12,9 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://cxx00yc1f1c61" path="res://Scenes/bird.tscn" id="11_6u6hq"]
 [ext_resource type="PackedScene" uid="uid://6t3s1rvsydqs" path="res://Scenes/Deadly Objects/thorns.tscn" id="12_ktyjc"]
 
-[node name="level_5" type="Node2D" groups=["level"]]
+[node name="level_5" type="Node2D" node_paths=PackedStringArray("spawn_position") groups=["level"]]
 script = ExtResource("1_1ewq4")
 level_name = "level_5"
+spawn_position = NodePath("Spawn Position")
+
+[node name="Spawn Position" type="Node2D" parent="."]
+position = Vector2(11, -161)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("7_pqa8u")
@@ -277,6 +281,9 @@ position = Vector2(488, -168)
 
 [node name="Collectible3" parent="Collectibles" instance=ExtResource("10_u6jh8")]
 position = Vector2(967, -229)
+
+[node name="Collectible4" parent="Collectibles" instance=ExtResource("10_u6jh8")]
+position = Vector2(976, -401)
 
 [node name="Collectible2" parent="Collectibles" instance=ExtResource("10_u6jh8")]
 position = Vector2(215, -150)

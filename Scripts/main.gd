@@ -5,7 +5,6 @@ extends Node
 @onready var label = $UI/PanelContainer/MarginContainer/GridContainer/Label
 @onready var music_audio = $"Music Audio Player"
 @onready var pause_menu = $"UI/Pause Menu"
-@onready var sound_effect_audio = $"Sound Effect Audio Player"
 
 var next_level = null
 var current_level_name = null
@@ -14,7 +13,6 @@ var paused
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_level.connect("level_changed", handle_level_changed)
-	# pause_menu.connect("unpause", handle_pause_menu())
 	pause_menu.hide()
 	music_audio.play()
 
@@ -48,7 +46,6 @@ func handle_level_changed(current_level_name: String):
 	animation.play("fade_in")
 	next_level.connect("level_changed", handle_level_changed)
 
-
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"fade_in":
@@ -71,11 +68,5 @@ func handle_pause_menu():
 		Global.can_move = false
 		pause_menu.show()
 		Engine.time_scale = 0
-	
 	paused = !paused
-
-func on_button_pressed():
-	sound_effect_audio.play()
-
-
 

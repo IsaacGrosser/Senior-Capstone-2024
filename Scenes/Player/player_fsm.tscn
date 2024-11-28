@@ -129,7 +129,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xuhor"]
 radius = 4.0
-height = 10.0
+height = 8.0
 
 [node name="Player-FSM" type="CharacterBody2D" node_paths=PackedStringArray("animation_player")]
 collision_layer = 3
@@ -142,12 +142,12 @@ animation_player = NodePath("AnimatedSprite2D")
 visibility_layer = 2
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_xi8ta")
-animation = &"running"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, -11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_xuhor")
 
 [node name="Camera2D" type="Camera2D" parent="."]

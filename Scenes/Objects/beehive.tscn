@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://bxdl385wot78g"]
+
+[ext_resource type="Texture2D" uid="uid://cpb28t72mjuq" path="res://Assets/Honey Objects/BeeHive.png" id="1_dsfe8"]
+[ext_resource type="Script" path="res://Scripts/Beehive.gd" id="2_byk6f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jruvr"]
+atlas = ExtResource("1_dsfe8")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcfe5"]
+atlas = ExtResource("1_dsfe8")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tinjr"]
+atlas = ExtResource("1_dsfe8")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngrs4"]
+atlas = ExtResource("1_dsfe8")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0vrw"]
+atlas = ExtResource("1_dsfe8")
+region = Rect2(144, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1ay6"]
+atlas = ExtResource("1_dsfe8")
+region = Rect2(176, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pg6x3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jruvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcfe5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tinjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngrs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0vrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1ay6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_asheh"]
+radius = 7.0
+
+[node name="Beehive" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_pg6x3")
+autoplay = "default"
+frame_progress = 0.181053
+script = ExtResource("2_byk6f")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_asheh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

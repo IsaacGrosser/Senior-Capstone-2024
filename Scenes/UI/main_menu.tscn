@@ -83,7 +83,7 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0eek3"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihvpd"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfqme"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0574"]
 atlas = ExtResource("6_36b0c")
@@ -223,6 +223,7 @@ theme_override_constants/separation = 10
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_hit6s")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("2_vr0pn")
 theme_override_styles/hover = ExtResource("3_qgfli")
@@ -233,6 +234,7 @@ text = "Start"
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_hit6s")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("2_vr0pn")
 theme_override_styles/hover = ExtResource("3_qgfli")
@@ -243,11 +245,12 @@ text = "Options"
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_hit6s")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("2_vr0pn")
 theme_override_styles/hover = ExtResource("3_qgfli")
 theme_override_styles/pressed = ExtResource("4_0o426")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ihvpd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qfqme")
 text = "Quit"
 
 [node name="TitleLabel" type="Label" parent="."]

@@ -87,9 +87,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4csxi"]
 size = Vector2(118, 549)
 
-[node name="level_8" type="Node2D" groups=["level"]]
+[node name="level_8" type="Node2D" node_paths=PackedStringArray("spawn_position") groups=["level"]]
 script = ExtResource("1_bw713")
 level_name = "level_8"
+spawn_position = NodePath("Spawn Position")
+
+[node name="Spawn Position" type="Node2D" parent="."]
+position = Vector2(1106, -609)
 
 [node name="Mushroom House" type="AnimatedSprite2D" parent="."]
 position = Vector2(103, -46)
