@@ -80,6 +80,7 @@ theme_override_colors/font_color = Color(1, 0.705882, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_a64fw")
 theme_override_font_sizes/font_size = 30
 text = "Volume"
 horizontal_alignment = 1
@@ -146,6 +147,7 @@ theme_override_constants/margin_top = 20
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a64fw")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("3_q0tht")
 theme_override_styles/hover = ExtResource("4_lwlln")
@@ -157,6 +159,7 @@ text = "Back
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_a64fw")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("3_q0tht")
 theme_override_styles/hover = ExtResource("4_lwlln")

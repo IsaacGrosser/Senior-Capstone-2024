@@ -59,7 +59,7 @@ radius = 7.0
 [node name="Beehive" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_pg6x3")
 autoplay = "default"
-frame_progress = 0.181053
+frame_progress = 0.0830823
 script = ExtResource("2_byk6f")
 
 [node name="Area2D" type="Area2D" parent="."]

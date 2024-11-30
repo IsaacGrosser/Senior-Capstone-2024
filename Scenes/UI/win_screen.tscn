@@ -223,6 +223,7 @@ theme_override_constants/separation = 10
 [node name="Play Again" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x0dls")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("3_3pvct")
 theme_override_styles/hover = ExtResource("4_1ng16")
@@ -233,6 +234,7 @@ text = "Play Again"
 [node name="Main Menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x0dls")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("3_3pvct")
 theme_override_styles/hover = ExtResource("4_1ng16")
@@ -244,6 +246,7 @@ text = "Main Menu
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x0dls")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("3_3pvct")
 theme_override_styles/hover = ExtResource("4_1ng16")
