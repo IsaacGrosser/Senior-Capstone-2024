@@ -2,7 +2,6 @@ extends Control
 
 @onready var quit = $VBoxContainer/Quit
 @onready var audio = $"Sound Effect Audio Player"
-@onready var main_menu = $"VBoxContainer/Main Menu"
 @onready var start = $VBoxContainer/Start
 
 func _ready():

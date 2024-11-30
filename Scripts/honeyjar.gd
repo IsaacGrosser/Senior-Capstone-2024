@@ -18,7 +18,7 @@ func _ready():
 	countdown_label.text = str(ceil(timer.wait_time))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if is_in_area:
 		if Input.is_action_just_pressed("interact") && !Global.has_honey:
 			directions_label.show()

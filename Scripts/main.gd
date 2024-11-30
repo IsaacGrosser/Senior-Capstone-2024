@@ -7,14 +7,13 @@ extends Node
 @onready var pause_menu = $"UI/Pause Menu"
 
 var next_level = null
-var current_level_name = null
 var paused
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_level.connect("level_changed", handle_level_changed)
 	pause_menu.hide()
-	music_audio.play()
+	#music_audio.play()
 
 func _process(_delta):
 	label.text = "Honeycomb: " + str(Global.score)
