@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbo1yd61cssef"
+path="res://.godot/imported/JumpSwoosh.wav-f2d1a9e346b5e4e9c2e111714ae2a624.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sound Effects/JumpSwoosh.wav"
+dest_files=["res://.godot/imported/JumpSwoosh.wav-f2d1a9e346b5e4e9c2e111714ae2a624.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

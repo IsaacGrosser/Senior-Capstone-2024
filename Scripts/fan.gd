@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var ray_cast = $RayCast2D
 @onready var collision_shape = $Area2D/CollisionShape2D
 @export var fan_strength : int = 100
 @onready var particles = $GPUParticles2D
@@ -15,7 +14,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if 170.0 <= self.rotation && self.rotation <= 190.0:
 		fan_pointing_down = true
 		particles.process_material = preload("res://Assets/Particles/downward_particles.tres")

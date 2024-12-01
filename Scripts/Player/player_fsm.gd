@@ -1,6 +1,13 @@
 class_name Player extends CharacterBody2D
 
 @export var animation_player : AnimatedSprite2D
+@onready var collision_shape = $CollisionShape2D
+
+## AUDIO PLAYER
+@onready var audio = $SoundEffectsAudioPlayer
+
+## DEBUGGER CHECKER
+@export var debug_state_messages : bool = true
 
 ## GRAVITY VARIABLES
 @export var gravity_clamp : float = 225# MAX GRAVITY
@@ -18,7 +25,17 @@ var coyote_counter : int = 0 # variable to hold current count state
 var jump_buffer_counter : int = 0 # variable to hold current count state
 var jump_buffer_active : bool = false
 
-## DEATH VARIABLES
+## WALLJUMP BUFFER VARIABLES
+@export var walljump_buffer_length : int = 8
+var walljump_buffer_counter : int = 0 # variable to hold current count state
+var walljump_buffer_active : bool = false
+
+## RAYCAST REFERENCES & VARIABLES
+@onready var ray_cast_left = $RayCastLeft
+@onready var ray_cast_right = $RayCastRight
+
+var ray_cast_left_is_colliding : bool = false
+var ray_cast_right_is_colliding : bool = false
 
 func _ready():
 	pass
@@ -26,9 +43,9 @@ func _ready():
 func _physics_process(_delta):
 	gravity()
 	check_jump_buffer()
+	check_walljump_buffer()
 	check_coyote_timer()
 	move_and_slide()
-	
 	# Added to return player to normal scale when outside of jump
 	animation_player.scale.x = move_toward(animation_player.scale.x, 1, .1)
 	animation_player.scale.y = move_toward(animation_player.scale.y, 1, .1)
@@ -53,6 +70,22 @@ func check_jump_buffer():
 		jump_buffer_counter -= 1
 	if jump_buffer_counter <= 0:
 		jump_buffer_active = false
+
+func check_walljump_buffer():
+	if self.is_on_wall_only():
+		walljump_buffer_active = true
+		walljump_buffer_counter = walljump_buffer_length
+		if ray_cast_left.is_colliding():
+			ray_cast_left_is_colliding = true
+		elif ray_cast_right.is_colliding():
+			ray_cast_right_is_colliding = true
+	# start counting down the buffer counter every frame if it is greater than 0
+	if walljump_buffer_counter > 0:
+		walljump_buffer_counter -= 1
+	if walljump_buffer_counter <= 0:
+		walljump_buffer_active = false
+		ray_cast_left_is_colliding = false
+		ray_cast_right_is_colliding = false
 
 func check_coyote_timer():
 	if coyote_counter <= 0:

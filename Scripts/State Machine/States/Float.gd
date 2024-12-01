@@ -12,7 +12,8 @@ class_name Float extends State
 
 func Enter():
 	state_name = "Float"
-	print("entered FLOAT state")
+	if character_body.debug_state_messages:
+		print("entered FLOAT state")
 	if animation_player:
 		animation_player.play("floating")
 

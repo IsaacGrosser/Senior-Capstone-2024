@@ -16,7 +16,8 @@ class_name JumpHangTime extends State
 
 func Enter():
 	state_name = "JumpHangTime"
-	print("entered JUMP HANG TIME state")
+	if character_body.debug_state_messages:
+		print("entered JUMP HANG TIME state")
 	if character_body && character_body.velocity.y >= -short_jump_threshold && previous_state == "Jump":
 		character_body.velocity.y = jump_end_early_gravity_mod
 

@@ -7,17 +7,28 @@ class_name WallJump extends State
 @export var walljump_velocity : int = 275
 @export var walljump_speed : int = 70
 
+## RAYCAST REFERENCES
+@export var ray_cast_left = RayCast2D
+@export var ray_cast_right = RayCast2D
+
+var rng = RandomNumberGenerator.new()
+
 func Enter():
 	state_name = "WallJump"
-	print("entered WALL JUMP state")
+	if character_body.debug_state_messages:
+		print("entered WALL JUMP state")
 	if animation_player:
 		animation_player.play("jumping")
+		var random_pitch = rng.randf_range(1.3, 1.7)
+		character_body.audio.pitch_scale = random_pitch
+		character_body.audio.stream = preload("res://Assets/Sounds/Sound Effects/JumpSwoosh.wav")
+		character_body.audio.play()
 		
-	if character_body && Input.is_action_pressed("move_left"):
+	if character_body && character_body.ray_cast_left_is_colliding:
 		character_body.velocity.x = walljump_speed
 		character_body.velocity.y = -walljump_velocity
 		
-	if character_body && Input.is_action_pressed("move_right"):
+	elif character_body && character_body.ray_cast_right_is_colliding:
 		character_body.velocity.x = -walljump_speed
 		character_body.velocity.y = -walljump_velocity
 

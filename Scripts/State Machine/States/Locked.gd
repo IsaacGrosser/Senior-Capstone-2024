@@ -5,7 +5,8 @@ class_name Locked extends State
 
 func Enter():
 	state_name = "Locked"
-	print("entered LOCKED state")
+	if character_body.debug_state_messages:
+		print("entered LOCKED state")
 	if animation_player:
 		animation_player.stop()
 

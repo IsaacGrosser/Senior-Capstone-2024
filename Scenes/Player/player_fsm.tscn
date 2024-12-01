@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://nwydip70qfkn"]
+[gd_scene load_steps=30 format=3 uid="uid://nwydip70qfkn"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_fsm.gd" id="1_27rvh"]
 [ext_resource type="Texture2D" uid="uid://pq6umdk6cgtv" path="res://Assets/Gnomes/Gnome16-animations.v3.png" id="1_ru0ml"]
 [ext_resource type="Texture2D" uid="uid://b0n1x7wya4hqt" path="res://Assets/Gnomes/Gnome16-animations.v4.png" id="3_f622c"]
 [ext_resource type="Script" path="res://Scripts/State Machine/State Machine.gd" id="3_focnn"]
+[ext_resource type="AudioStream" uid="uid://cbo1yd61cssef" path="res://Assets/Sounds/Sound Effects/JumpSwoosh.wav" id="4_50swy"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Idle.gd" id="4_cojeh"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Locked.gd" id="4_lrgcq"]
 [ext_resource type="Script" path="res://Scripts/State Machine/States/Run.gd" id="5_ehy7q"]
@@ -134,9 +135,11 @@ height = 8.0
 [node name="Player-FSM" type="CharacterBody2D" node_paths=PackedStringArray("animation_player")]
 collision_layer = 3
 collision_mask = 3
+floor_stop_on_slope = false
 safe_margin = 0.09
 script = ExtResource("1_27rvh")
 animation_player = NodePath("AnimatedSprite2D")
+debug_state_messages = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2
@@ -163,6 +166,25 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_top_margin = 0.5
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -5)
+target_position = Vector2(-7, 0)
+collision_mask = 3
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -5)
+target_position = Vector2(7, 0)
+collision_mask = 3
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="SoundEffectsAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_50swy")
+pitch_scale = 1.5
+bus = &"Sound Effects"
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_focnn")
@@ -217,3 +239,5 @@ animation_player = NodePath("../../AnimatedSprite2D")
 script = ExtResource("14_22ync")
 character_body = NodePath("../..")
 animation_player = NodePath("../../AnimatedSprite2D")
+
+[connection signal="finished" from="SoundEffectsAudioPlayer" to="State Machine/Run" method="_on_sound_effects_audio_player_finished"]

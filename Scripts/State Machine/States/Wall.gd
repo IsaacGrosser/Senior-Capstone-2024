@@ -8,7 +8,8 @@ class_name Wall extends State
 
 func Enter():
 	state_name = "Wall"
-	print("entered WALL state")
+	if character_body.debug_state_messages:
+		print("entered WALL state")
 	if animation_player:
 		animation_player.play("falling")
 

@@ -5,7 +5,8 @@ class_name Idle extends State
 
 func Enter():
 	state_name = "Idle"
-	print("entered IDLE state")
+	if character_body.debug_state_messages:
+		print("entered IDLE state")
 	if animation_player:
 		animation_player.play("idle")
 		

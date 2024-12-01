@@ -13,7 +13,8 @@ var coyote_counter : int = 0 # variable to hold current count state
 
 func Enter():
 	state_name = "CoyoteTime"
-	print("entered COYOTE TIME state")
+	if character_body.debug_state_messages:
+		print("entered COYOTE TIME state")
 	coyote_counter = coyote_buffer_length
 	if animation_player:
 		animation_player.play("falling")

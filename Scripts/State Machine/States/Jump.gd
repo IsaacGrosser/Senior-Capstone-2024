@@ -12,14 +12,21 @@ class_name Jump extends State
 @export var air_horizontal_acceleration : int = 10
 @export var max_horizontal_speed : int = 90
 
+var rng = RandomNumberGenerator.new()
+
 func Enter():
 	state_name = "Jump"
-	print("entered JUMP state")
+	if character_body.debug_state_messages:
+		print("entered JUMP state")
 	if animation_player:
 		animation_player.play("jumping")
 		# Adds squish for jumping
 		animation_player.scale = Vector2(0.5, 1.6)
 	if (character_body && character_body.is_on_floor()) or character_body && previous_state == "CoyoteTime":
+		var random_pitch = rng.randf_range(1.3, 1.7)
+		character_body.audio.pitch_scale = random_pitch
+		character_body.audio.stream = preload("res://Assets/Sounds/Sound Effects/JumpSwoosh.wav")
+		character_body.audio.play()
 		character_body.velocity.y =  -jump_velocity
 
 func Exit():

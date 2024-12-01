@@ -12,7 +12,8 @@ class_name Fall extends State
 
 func Enter():
 	state_name = "Fall"
-	print("entered FALL state")
+	if character_body.debug_state_messages:
+		print("entered FALL state")
 	if animation_player && !animation_player.animation == "falling":
 		animation_player.play("falling")
 	if character_body && character_body.velocity.y >= -short_jump_threshold && previous_state == "Jump":
@@ -25,6 +26,11 @@ func Update(_delta: float):
 	pass
 
 func Physics_Update(_delta: float):
+	if character_body:
+		if character_body.ray_cast_left.is_colliding():
+			print("left is colliding")
+		if character_body.ray_cast_right.is_colliding():
+			print("right is colliding")
 	if Input.is_action_pressed("move_right"):
 		animation_player.flip_h = false
 		character_body.velocity.x += air_horizontal_acceleration * 2 # multiply to exponentially increase acc
@@ -44,9 +50,11 @@ func handle_transitions():
 	if character_body:
 		if character_body.is_on_floor():
 			Transitioned.emit(self, "Idle")
+		if (character_body.ray_cast_left_is_colliding or character_body.ray_cast_right_is_colliding) && Input.is_action_just_pressed("jump"):
+			Transitioned.emit(self, "WallJump")
 		if Input.is_action_pressed("jump") && Global.can_float:
 			Transitioned.emit(self, "Float")
-		
+	
 	if character_body.is_on_wall_only() && (Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left")):
 		Transitioned.emit(self, "Wall")
 	if !Global.can_move:
